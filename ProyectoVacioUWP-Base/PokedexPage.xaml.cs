@@ -147,7 +147,8 @@ namespace ProyectoVacioUWP_Base
 
         private void IrADetallePokemon(iPokemon pokemon)
         {
-            Frame.Navigate(typeof(MisPokemonPage), pokemon);
+            this.Frame.Navigate(typeof(PokemonDetallePage), pokemon);
+            //Frame.Navigate(typeof(MisPokemonPage), pokemon);
         }
     }
 }
