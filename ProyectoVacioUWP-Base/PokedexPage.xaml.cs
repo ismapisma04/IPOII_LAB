@@ -1,22 +1,28 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 
 namespace ProyectoVacioUWP_Base
 {
     public sealed partial class PokedexPage : Page
     {
+        private List<iPokemon> listaPokemons = new List<iPokemon>();
+
         public PokedexPage()
         {
             this.InitializeComponent();
             CargarPokemons();
+            MostrarPokemons(listaPokemons);
         }
 
         private void CargarPokemons()
         {
+            listaPokemons.Clear();
+
             Type[] tiposPokemon =
             {
                 typeof(EmpoleonARS)
@@ -24,14 +30,56 @@ namespace ProyectoVacioUWP_Base
 
             foreach (Type tipo in tiposPokemon)
             {
-                if (Activator.CreateInstance(tipo) is UserControl control && control is iPokemon pokemon)
+                if (Activator.CreateInstance(tipo) is iPokemon pokemon)
                 {
-                    PrepararPokemonParaPokedex(pokemon, control);
+                    listaPokemons.Add(pokemon);
+                }
+            }
+        }
+
+        private void MostrarPokemons(IEnumerable<iPokemon> pokemons)
+        {
+            spPokemons.Children.Clear();
+
+            int contador = 0;
+
+            foreach (iPokemon pokemon in pokemons)
+            {
+                if (CrearControlPokemon(pokemon) is UserControl control && control is iPokemon pokemonVisual)
+                {
+                    PrepararPokemonParaPokedex(pokemonVisual, control);
 
                     Border tarjeta = CrearTarjetaPokemon(control, pokemon);
                     spPokemons.Children.Add(tarjeta);
+                    contador++;
                 }
             }
+
+            txtResultados.Text = contador == listaPokemons.Count
+                ? $"Mostrando todos los Pokémon ({contador})"
+                : $"Resultados encontrados: {contador}";
+        }
+        private UserControl CrearControlPokemon(iPokemon pokemon)
+        {
+            if (pokemon is EmpoleonARS)
+            {
+                EmpoleonARS vista = new EmpoleonARS
+                {
+                    Nombre = pokemon.Nombre,
+                    Vida = pokemon.Vida,
+                    Energia = pokemon.Energia,
+                    Categoría = pokemon.Categoría,
+                    Tipo = pokemon.Tipo,
+                    Altura = pokemon.Altura,
+                    Peso = pokemon.Peso,
+                    Evolucion = pokemon.Evolucion,
+                    Descripcion = pokemon.Descripcion
+                };
+
+                return vista;
+            }
+
+            return null;
         }
 
         private void PrepararPokemonParaPokedex(iPokemon pokemon, UserControl control)
@@ -145,10 +193,27 @@ namespace ProyectoVacioUWP_Base
             return tarjetaExterior;
         }
 
+        private void txtBusquedaPokemon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // TODO: revisar si funciona correctamente, solo habia un pokemon para probar
+            string texto = txtBusquedaPokemon.Text?.Trim().ToLower() ?? "";
+
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                MostrarPokemons(listaPokemons);
+                return;
+            }
+
+            var resultados = listaPokemons.Where(p =>
+                (p.Nombre != null && p.Nombre.ToLower().Contains(texto)) ||
+                (p.Descripcion != null && p.Descripcion.ToLower().Contains(texto)));
+
+            MostrarPokemons(resultados);
+        }
+
         private void IrADetallePokemon(iPokemon pokemon)
         {
             this.Frame.Navigate(typeof(PokemonDetallePage), pokemon);
-            //Frame.Navigate(typeof(MisPokemonPage), pokemon);
         }
     }
 }

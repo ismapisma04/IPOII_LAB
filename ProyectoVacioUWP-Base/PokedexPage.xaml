@@ -70,10 +70,32 @@
                         Foreground="White"/>
 
                     <TextBlock
-                        Text="Cada tarjeta muestra el Pokémon a la izquierda y su descripción a la derecha."
+                        Text="Busca por nombre o por texto de la descripción."
                         FontSize="14"
                         Foreground="#DDEAFBFF"
                         TextWrapping="WrapWholeWords"/>
+
+                    <Border
+                        Background="#22FFFFFF"
+                        BorderBrush="#40FFFFFF"
+                        BorderThickness="1"
+                        CornerRadius="14"
+                        Padding="14,10">
+                        <TextBox
+                            x:Name="txtBusquedaPokemon"
+                            PlaceholderText="Buscar Pokémon..."
+                            TextChanged="txtBusquedaPokemon_TextChanged"
+                            Background="Transparent"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontSize="16"/>
+                    </Border>
+
+                    <TextBlock
+                        x:Name="txtResultados"
+                        Text="Mostrando todos los Pokémon"
+                        FontSize="14"
+                        Foreground="#E6FFFFFF"/>
 
                     <StackPanel
                         x:Name="spPokemons"
