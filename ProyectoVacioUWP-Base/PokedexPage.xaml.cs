@@ -64,9 +64,8 @@ namespace ProyectoVacioUWP_Base
 
             Border zonaClickPokemon = new Border
             {
-                Background = new SolidColorBrush(Color.FromArgb(55, 255, 255, 255)),
-                BorderBrush = new SolidColorBrush(Colors.Black),
-                BorderThickness = new Thickness(4),
+                Background = new SolidColorBrush(Colors.Transparent),
+                BorderThickness = new Thickness(0),
                 CornerRadius = new CornerRadius(8),
                 Padding = new Thickness(10),
                 MinHeight = 190,
