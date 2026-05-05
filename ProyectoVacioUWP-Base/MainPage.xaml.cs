@@ -1,75 +1,103 @@
-﻿using System;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
+﻿using System.Linq;
 using Windows.UI.Core;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 
 namespace ProyectoVacioUWP_Base
 {
     public sealed partial class MainPage : Page
     {
+        private readonly SolidColorBrush fondoNormal = new SolidColorBrush(Windows.UI.Color.FromArgb(0, 0, 0, 0));
+        private readonly SolidColorBrush fondoSeleccionado = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 55, 55, 55));
+
         public MainPage()
         {
-            this.InitializeComponent(); 
-            // Navigate to Home initially
-            ContentFrame.Navigate(typeof(HomePage));
-            NavView.SelectedItem = NavView.MenuItems[0];
+            this.InitializeComponent();
 
-            // Set up back button for older Windows 10 versions
+            fmMain.Navigate(typeof(HomePage));
+            marcarSeleccionado(btnInicio);
+
             SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
+            actualizarBotonAtras();
         }
 
         private void MainPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
-            if (ContentFrame.CanGoBack)
+            if (fmMain.CanGoBack)
             {
                 e.Handled = true;
-                ContentFrame.GoBack();
+                fmMain.GoBack();
             }
         }
 
-        private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            if (args.IsSettingsInvoked)
+            if (fmMain.CanGoBack)
             {
-                // We're not using standard settings, but we could handle it here
-            }
-            else
-            {
-                string tag = args.InvokedItemContainer.Tag?.ToString();
-                switch (tag)
-                {
-                    case "Home":
-                        ContentFrame.Navigate(typeof(HomePage));
-                        break;
-                    case "MisPokemon":
-                        ContentFrame.Navigate(typeof(MisPokemonPage));
-                        break;
-                    case "Pokedex":
-                        ContentFrame.Navigate(typeof(PokedexPage));
-                        break;
-                    case "Combate":
-                        ContentFrame.Navigate(typeof(CombatePage));
-                        break;
-                    case "AcercaDe":
-                        ContentFrame.Navigate(typeof(AcercaDePage));
-                        break;
-                }
+                fmMain.GoBack();
             }
         }
 
-        private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        private void fmMain_Navigated(object sender, NavigationEventArgs e)
         {
-            if (ContentFrame.CanGoBack)
-            {
-                ContentFrame.GoBack();
-            }
+            actualizarBotonAtras();
         }
 
-        private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
+        private void actualizarBotonAtras()
         {
-            NavView.IsBackEnabled = ContentFrame.CanGoBack;
+            btnBack.Visibility = fmMain.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
+
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                ContentFrame.CanGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+                fmMain.CanGoBack
+                ? AppViewBackButtonVisibility.Visible
+                : AppViewBackButtonVisibility.Collapsed;
+        }
+
+        private void limpiarSeleccion()
+        {
+            btnInicio.Background = fondoNormal;
+            btnMisPokemon.Background = fondoNormal;
+            btnPokedex.Background = fondoNormal;
+            btnCombate.Background = fondoNormal;
+            btnAcercaDe.Background = fondoNormal;
+        }
+
+        private void marcarSeleccionado(Button boton)
+        {
+            limpiarSeleccion();
+            boton.Background = fondoSeleccionado;
+        }
+
+        private void irInicio(object sender, RoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(HomePage));
+            marcarSeleccionado(btnInicio);
+        }
+
+        private void irMisPokemon(object sender, RoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(MisPokemonPage));
+            marcarSeleccionado(btnMisPokemon);
+        }
+
+        private void irPokedex(object sender, RoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(PokedexPage));
+            marcarSeleccionado(btnPokedex);
+        }
+
+        private void irCombate(object sender, RoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(CombatePage));
+            marcarSeleccionado(btnCombate);
+        }
+
+        private void irAcercaDe(object sender, RoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(AcercaDePage));
+            marcarSeleccionado(btnAcercaDe);
         }
     }
 }

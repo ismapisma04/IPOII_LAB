@@ -9,15 +9,129 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView x:Name="NavView" ItemInvoked="NavView_ItemInvoked" BackRequested="NavView_BackRequested">
-            <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" Content="Inicio" Tag="Home" />
-                <NavigationViewItem Icon="List" Content="Mis Pokemon" Tag="MisPokemon" />
-                <NavigationViewItem Icon="Library" Content="Pokedex" Tag="Pokedex" />
-                <NavigationViewItem Icon="Target" Content="Combate" Tag="Combate" />
-                <NavigationViewItem Icon="ContactInfo" Content="Acerca De" Tag="AcercaDe" />
-            </NavigationView.MenuItems>
-            <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsNavigationStackEnabled="True" Navigated="ContentFrame_Navigated" />
-        </NavigationView>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#FF1F1F1F">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="56"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btnBack"
+                    Grid.Row="0"
+                    Width="40"
+                    Height="40"
+                    Margin="8,8,0,8"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Click="btnBack_Click"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Foreground="White"
+                    FontSize="20"
+                    Content="←"
+                    Visibility="Collapsed"/>
+
+            <StackPanel Grid.Row="1" Margin="0,8,0,0">
+                <Button x:Name="btnInicio"
+                        Click="irInicio"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12"
+                        Margin="0,4,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <FontIcon Glyph="&#xE80F;" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="Inicio"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnMisPokemon"
+                        Click="irMisPokemon"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12"
+                        Margin="0,4,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <FontIcon Glyph="&#xE14C;" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="Mis Pokemon"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnPokedex"
+                        Click="irPokedex"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12"
+                        Margin="0,4,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <FontIcon Glyph="&#xE82D;" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="Pokedex"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnCombate"
+                        Click="irCombate"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12"
+                        Margin="0,4,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <FontIcon Glyph="&#xE1D3;" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="Combate"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnAcercaDe"
+                        Click="irAcercaDe"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12"
+                        Margin="0,4,0,0">
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <FontIcon Glyph="&#xE946;" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="Acerca De"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <Button x:Name="btnConfiguracion"
+                    Grid.Row="2"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Foreground="White"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    Padding="12"
+                    Margin="0,0,0,4">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <FontIcon Glyph="&#xE713;" FontFamily="Segoe MDL2 Assets"/>
+                    <TextBlock Text="Configuración"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <Frame x:Name="fmMain"
+               Grid.Column="1"
+               IsNavigationStackEnabled="True"
+               Navigated="fmMain_Navigated"/>
     </Grid>
 </Page>

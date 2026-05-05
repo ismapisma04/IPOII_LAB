@@ -138,10 +138,8 @@
     <Compile Include="AcercaDePage.xaml.cs">
       <DependentUpon>AcercaDePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Empoleon\EmpoleonARS.xaml.cs">
-      <DependentUpon>Empoleon\EmpoleonARS.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Empoleon\iPokemon.cs" />
+    <Compile Include="Pokemons\EmpoleonARS\EmpoleonARS.xaml.cs" />
+    <Compile Include="Pokemons\EmpoleonARS\iPokemon.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -157,35 +155,35 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\agua.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\aureola.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\burbujas.mp3" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\corazon.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\destello_blanco.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\destello_rojo.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\destello_rojo2.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\energia.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\escudo laser.wav" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\glaciar.jpg" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\gotasudor2.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\LockScreenLogo.scale-200.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\muerte.wav" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\muertearcade.wav" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\ojos-derrotado.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\ola.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\pocion.wav" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\red-potion.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\shield.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\sonido olas del mar.mp3" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\SplashScreen.scale-200.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\Square150x150Logo.scale-200.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\Square44x44Logo.scale-200.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\StoreLogo.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\tirita.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\Wide310x150Logo.scale-200.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\yellow-potion.png" />
-    <Content Include="Empoleon\AssetsEmpoleonARS\zzz.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\agua.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\aureola.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\burbujas.mp3" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\corazon.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\destello_blanco.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\destello_rojo.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\destello_rojo2.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\energia.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\escudo laser.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\glaciar.jpg" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\gotasudor2.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\muerte.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\muertearcade.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\ojos-derrotado.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\ola.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\pocion.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\red-potion.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\shield.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\sonido olas del mar.mp3" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\StoreLogo.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\tirita.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\yellow-potion.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\zzz.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -216,7 +214,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Empoleon\EmpoleonARS.xaml">
+    <Page Include="Pokemons\EmpoleonARS\EmpoleonARS.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -226,6 +224,7 @@
       <Version>6.2.14</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
