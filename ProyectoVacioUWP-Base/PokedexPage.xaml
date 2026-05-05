@@ -6,7 +6,83 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid>
-        <TextBlock Text="Pokedex" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    <Page.Resources>
+        <LinearGradientBrush x:Key="FondoPokedexBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FF0F172A" Offset="0"/>
+            <GradientStop Color="#FF1E3A5F" Offset="0.55"/>
+            <GradientStop Color="#FF2563EB" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource FondoPokedexBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabecera -->
+        <Border
+            Grid.Row="0"
+            Margin="24,24,24,12"
+            Padding="24,18"
+            CornerRadius="20"
+            Background="#33FFFFFF"
+            BorderBrush="#55FFFFFF"
+            BorderThickness="1">
+
+            <StackPanel Spacing="6">
+                <TextBlock
+                    Text="Pokédex"
+                    FontSize="34"
+                    FontWeight="Bold"
+                    Foreground="White"/>
+
+                <TextBlock
+                    Text="Colección de Pokémon del proyecto. Cada tarjeta se crea automáticamente desde el código C#."
+                    FontSize="15"
+                    TextWrapping="WrapWholeWords"
+                    Foreground="#E6FFFFFF"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Contenido -->
+        <ScrollViewer
+            Grid.Row="1"
+            Margin="24,0,24,24"
+            VerticalScrollBarVisibility="Auto"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollMode="Enabled"
+            ZoomMode="Disabled">
+
+            <Border
+                MaxWidth="980"
+                HorizontalAlignment="Center"
+                Padding="24"
+                CornerRadius="20"
+                Background="#1AFFFFFF"
+                BorderBrush="#33FFFFFF"
+                BorderThickness="1">
+
+                <StackPanel Spacing="18">
+                    <TextBlock
+                        Text="Pokémon disponibles"
+                        FontSize="24"
+                        FontWeight="SemiBold"
+                        Foreground="White"/>
+
+                    <TextBlock
+                        Text="La lista inferior se rellena desde el método CargarPokemons()."
+                        FontSize="14"
+                        Foreground="#DDEAFBFF"
+                        TextWrapping="WrapWholeWords"/>
+
+                    <StackPanel
+                        x:Name="spPokemons"
+                        Spacing="20"
+                        HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
     </Grid>
 </Page>
