@@ -21,7 +21,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Cabecera -->
         <Border
             Grid.Row="0"
             Margin="24,24,24,12"
@@ -33,20 +32,19 @@
 
             <StackPanel Spacing="6">
                 <TextBlock
-                    Text="Pokédex"
+                    Text="Pokémon disponibles"
                     FontSize="34"
                     FontWeight="Bold"
                     Foreground="White"/>
 
                 <TextBlock
-                    Text="Colección de Pokémon del proyecto. Cada tarjeta se crea automáticamente desde el código C#."
+                    Text="Pulsa sobre cualquier tarjeta para abrir la información detallada."
                     FontSize="15"
                     TextWrapping="WrapWholeWords"
                     Foreground="#E6FFFFFF"/>
             </StackPanel>
         </Border>
 
-        <!-- Contenido -->
         <ScrollViewer
             Grid.Row="1"
             Margin="24,0,24,24"
@@ -56,7 +54,7 @@
             ZoomMode="Disabled">
 
             <Border
-                MaxWidth="980"
+                MaxWidth="1100"
                 HorizontalAlignment="Center"
                 Padding="24"
                 CornerRadius="20"
@@ -66,21 +64,21 @@
 
                 <StackPanel Spacing="18">
                     <TextBlock
-                        Text="Pokémon disponibles"
+                        Text="Lista de la Pokédex"
                         FontSize="24"
                         FontWeight="SemiBold"
                         Foreground="White"/>
 
                     <TextBlock
-                        Text="La lista inferior se rellena desde el método CargarPokemons()."
+                        Text="Cada tarjeta muestra el Pokémon a la izquierda y su descripción a la derecha."
                         FontSize="14"
                         Foreground="#DDEAFBFF"
                         TextWrapping="WrapWholeWords"/>
 
                     <StackPanel
                         x:Name="spPokemons"
-                        Spacing="20"
-                        HorizontalAlignment="Center"/>
+                        Spacing="18"
+                        HorizontalAlignment="Stretch"/>
                 </StackPanel>
             </Border>
         </ScrollViewer>
