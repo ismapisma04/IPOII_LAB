@@ -136,52 +136,6 @@
                             Foreground="#FFD7ECFF"
                             Margin="0,0,0,16"/>
 
-                        <Border
-                            Background="#14FFFFFF"
-                            CornerRadius="14"
-                            Padding="16"
-                            Margin="0,0,0,16">
-                            <StackPanel>
-                                <TextBlock Text="Vida" Style="{StaticResource TituloCampoStyle}"/>
-                                <ProgressBar
-                                    x:Name="pbVidaDetalle"
-                                    Minimum="0"
-                                    Maximum="100"
-                                    Height="16"
-                                    Value="0"/>
-
-                                <TextBlock
-                                    x:Name="txtVidaValor"
-                                    Text="0 / 100"
-                                    FontSize="13"
-                                    Foreground="#FFEAF6FF"
-                                    Margin="0,8,0,0"/>
-                            </StackPanel>
-                        </Border>
-
-                        <Border
-                            Background="#14FFFFFF"
-                            CornerRadius="14"
-                            Padding="16"
-                            Margin="0,0,0,20">
-                            <StackPanel>
-                                <TextBlock Text="Energía" Style="{StaticResource TituloCampoStyle}"/>
-                                <ProgressBar
-                                    x:Name="pbEnergiaDetalle"
-                                    Minimum="0"
-                                    Maximum="100"
-                                    Height="16"
-                                    Value="0"/>
-
-                                <TextBlock
-                                    x:Name="txtEnergiaValor"
-                                    Text="0 / 100"
-                                    FontSize="13"
-                                    Foreground="#FFEAF6FF"
-                                    Margin="0,8,0,0"/>
-                            </StackPanel>
-                        </Border>
-
                         <TextBlock Text="Categoría" Style="{StaticResource TituloCampoStyle}"/>
                         <TextBlock x:Name="txtCategoria" Style="{StaticResource ValorCampoStyle}"/>
 

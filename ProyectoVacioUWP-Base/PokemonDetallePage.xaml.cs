@@ -31,11 +31,14 @@ namespace ProyectoVacioUWP_Base
             txtNombre.Text = pokemon.Nombre;
             txtSubtitulo.Text = $"{pokemon.Categoría} · {pokemon.Tipo}";
 
+            /*
             pbVidaDetalle.Value = pokemon.Vida;
             txtVidaValor.Text = $"{pokemon.Vida:0} / 100";
 
             pbEnergiaDetalle.Value = pokemon.Energia;
             txtEnergiaValor.Text = $"{pokemon.Energia:0} / 100";
+            */
+
 
             txtCategoria.Text = pokemon.Categoría;
             txtTipo.Text = pokemon.Tipo;
@@ -61,9 +64,9 @@ namespace ProyectoVacioUWP_Base
                 vista.Evolucion = pokemon.Evolucion;
                 vista.Descripcion = pokemon.Descripcion;
 
-                vista.verNombre(true);
-                vista.verFilaVida(true);
-                vista.verFilaEnergia(true);
+                vista.verNombre(false);
+                vista.verFilaVida(false);
+                vista.verFilaEnergia(false);
                 vista.verPocionVida(false);
                 vista.verPocionEnergia(false);
                 vista.verEscudo(false);
