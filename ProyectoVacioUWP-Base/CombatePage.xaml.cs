@@ -145,12 +145,14 @@ namespace ProyectoVacioUWP_Base
                 return;
             }
 
-            btnVersus.IsEnabled = false;
-            gvPokemons.IsEnabled = false;
+            var parametros = new CombateParametros
+            {
+                NombrePokemonP1 = pokemonSeleccionadoP1.Nombre,
+                NombrePokemonP2 = pokemonSeleccionadoP2.Nombre
+            };
 
-            temporizadorInicioCombate.Start();
+            Frame.Navigate(typeof(ArenaCombatePage), parametros);
         }
-
         private void TemporizadorInicioCombate_Tick(object sender, object e)
         {
             temporizadorInicioCombate.Stop();
