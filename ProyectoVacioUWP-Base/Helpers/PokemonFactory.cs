@@ -63,8 +63,8 @@ namespace ProyectoVacioUWP_Base
             pokemonVisual.verEscudo(false);
             pokemonVisual.activarAniIdle(true);
 
-            control.Width = 220;
-            control.Height = 160;
+            control.Width = 170;
+            control.Height = 125;
             control.HorizontalAlignment = HorizontalAlignment.Center;
             control.VerticalAlignment = VerticalAlignment.Center;
             control.IsHitTestVisible = false;

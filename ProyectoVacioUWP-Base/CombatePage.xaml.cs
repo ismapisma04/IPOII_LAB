@@ -48,8 +48,13 @@ namespace ProyectoVacioUWP_Base
         {
             txtTurnoP1.Foreground = new SolidColorBrush(turnoSeleccion == 1 ? Colors.DodgerBlue : Colors.Black);
             txtTurnoP2.Foreground = new SolidColorBrush(turnoSeleccion == 2 ? Colors.Red : Colors.Black);
-        }
 
+            scaleP1.ScaleX = turnoSeleccion == 1 ? 1.28 : 1.0;
+            scaleP1.ScaleY = turnoSeleccion == 1 ? 1.28 : 1.0;
+
+            scaleP2.ScaleX = turnoSeleccion == 2 ? 1.28 : 1.0;
+            scaleP2.ScaleY = turnoSeleccion == 2 ? 1.28 : 1.0;
+        }
         private void gvPokemons_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (!(e.ClickedItem is UserControl controlPulsado))
@@ -106,6 +111,9 @@ namespace ProyectoVacioUWP_Base
             {
                 PokemonFactory.PrepararParaSeleccion(pokemonVisual, control);
 
+                control.Width = 230;
+                control.Height = 180;
+
                 Viewbox vb = new Viewbox
                 {
                     Stretch = Stretch.Uniform,
@@ -118,12 +126,13 @@ namespace ProyectoVacioUWP_Base
             }
         }
 
+
         private void ActivarBotonVersus()
         {
             btnVersus.IsEnabled = true;
-            btnVersus.Opacity = 1;
+            MostrarVsStoryboard.Begin();
+            RespiracionVsStoryboard.Begin();
         }
-
         private void PrepararTemporizador()
         {
             temporizadorInicioCombate = new DispatcherTimer();

@@ -10,13 +10,52 @@
     <Page.Resources>
         <Storyboard x:Name="FadeNegroStoryboard">
             <DoubleAnimation
-                Storyboard.TargetName="overlayNegro"
-                Storyboard.TargetProperty="Opacity"
-                To="1"
-                Duration="0:0:1.2" />
+            Storyboard.TargetName="overlayNegro"
+            Storyboard.TargetProperty="Opacity"
+            To="1"
+            Duration="0:0:1.2" />
+        </Storyboard>
+
+        <Storyboard x:Name="MostrarVsStoryboard">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="btnVersus"
+                                       Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimation Storyboard.TargetName="btnVersus"
+                         Storyboard.TargetProperty="Opacity"
+                         From="0"
+                         To="1"
+                         Duration="0:0:0.6"/>
+
+            <DoubleAnimation Storyboard.TargetName="scaleVs"
+                         Storyboard.TargetProperty="ScaleX"
+                         From="0.7"
+                         To="1"
+                         Duration="0:0:0.6"/>
+
+            <DoubleAnimation Storyboard.TargetName="scaleVs"
+                         Storyboard.TargetProperty="ScaleY"
+                         From="0.7"
+                         To="1"
+                         Duration="0:0:0.6"/>
+        </Storyboard>
+
+        <Storyboard x:Name="RespiracionVsStoryboard" RepeatBehavior="Forever" AutoReverse="True">
+            <DoubleAnimation Storyboard.TargetName="scaleVs"
+                         Storyboard.TargetProperty="ScaleX"
+                         From="1"
+                         To="1.08"
+                         Duration="0:0:0.9"/>
+            <DoubleAnimation Storyboard.TargetName="scaleVs"
+                         Storyboard.TargetProperty="ScaleY"
+                         From="1"
+                         To="1.08"
+                         Duration="0:0:0.9"/>
         </Storyboard>
     </Page.Resources>
-
+    
+    
     <Grid x:Name="rootGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -32,57 +71,62 @@
 
         <!-- Indicadores superiores -->
         <TextBlock x:Name="txtTurnoP1"
-                   Grid.Row="0"
-                   Grid.Column="0"
-                   Text="P1"
-                   FontSize="72"
-                   FontWeight="Bold"
-                   Foreground="Black"
-                   HorizontalAlignment="Center"
-                   Margin="0,25,0,10"/>
+           Grid.Row="0"
+           Grid.Column="0"
+           Text="P1"
+           FontSize="110"
+           FontWeight="Black"
+           Foreground="Black"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           Margin="0,18,0,10"
+           RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <ScaleTransform x:Name="scaleP1" ScaleX="1" ScaleY="1"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
 
         <Border Grid.Row="0"
-                Grid.Column="1"
-                Margin="20,20,20,10"
-                Padding="18"
-                CornerRadius="35"
-                BorderBrush="Black"
-                BorderThickness="3"
-                Background="White"
-                MinHeight="280"
-                MaxWidth="520"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
+        Grid.Column="1"
+        Margin="20,20,20,10"
+        Padding="14"
+        CornerRadius="35"
+        BorderBrush="Black"
+        BorderThickness="3"
+        Background="White"
+        MinHeight="300"
+        MaxWidth="580"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
 
             <GridView x:Name="gvPokemons"
-                      IsItemClickEnabled="True"
-                      SelectionMode="None"
-                      IsTabStop="False"
-                      ItemClick="gvPokemons_ItemClick"
-                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                      ScrollViewer.VerticalScrollBarVisibility="Auto"
-                      HorizontalAlignment="Stretch"
-                      VerticalAlignment="Stretch">
+              IsItemClickEnabled="True"
+              SelectionMode="None"
+              IsTabStop="False"
+              ItemClick="gvPokemons_ItemClick"
+              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+              ScrollViewer.VerticalScrollBarVisibility="Auto"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <ItemsWrapGrid Orientation="Horizontal"
-                                       MaximumRowsOrColumns="3"/>
+                               MaximumRowsOrColumns="4"/>
                     </ItemsPanelTemplate>
                 </GridView.ItemsPanel>
 
                 <GridView.ItemTemplate>
                     <DataTemplate>
-                        <Border Width="150"
-                                Height="130"
-                                Margin="10"
-                                Padding="6"
-                                Background="Transparent"
-                                BorderBrush="#22000000"
-                                BorderThickness="1"
-                                CornerRadius="16">
+                        <Border Width="120"
+                        Height="105"
+                        Margin="8"
+                        Padding="4"
+                        Background="Transparent"
+                        CornerRadius="12">
                             <Viewbox Stretch="Uniform"
-                                     HorizontalAlignment="Stretch"
-                                     VerticalAlignment="Stretch">
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center">
                                 <ContentPresenter Content="{Binding}"/>
                             </Viewbox>
                         </Border>
@@ -90,16 +134,23 @@
                 </GridView.ItemTemplate>
             </GridView>
         </Border>
-
+        
+        
         <TextBlock x:Name="txtTurnoP2"
-                   Grid.Row="0"
-                   Grid.Column="2"
-                   Text="P2"
-                   FontSize="72"
-                   FontWeight="Bold"
-                   Foreground="Black"
-                   HorizontalAlignment="Center"
-                   Margin="0,25,0,10"/>
+           Grid.Row="0"
+           Grid.Column="2"
+           Text="P2"
+           FontSize="110"
+           FontWeight="Black"
+           Foreground="Black"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           Margin="0,18,0,10"
+           RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <ScaleTransform x:Name="scaleP2" ScaleX="1" ScaleY="1"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
 
         <!-- Zona inferior -->
         <Border Grid.Row="2"
@@ -127,21 +178,28 @@
         </Border>
 
         <Button x:Name="btnVersus"
-                Grid.Row="2"
-                Grid.Column="1"
-                Width="220"
-                Height="160"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Background="Transparent"
-                BorderThickness="0"
-                IsEnabled="False"
-                Opacity="0.45"
-                Click="btnVersus_Click">
-            <Image Source="ms-appx:///Assets/versusimage.png"
-                   Stretch="Uniform"/>
-        </Button>
+        Grid.Row="2"
+        Grid.Column="1"
+        Width="290"
+        Height="210"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Background="Transparent"
+        BorderThickness="0"
+        IsEnabled="False"
+        Visibility="Collapsed"
+        Opacity="0"
+        Click="btnVersus_Click"
+        RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <ScaleTransform x:Name="scaleVs" ScaleX="1" ScaleY="1"/>
+            </Button.RenderTransform>
 
+            <Image Source="ms-appx:///Assets/versusimage.png"
+           Stretch="Uniform"/>
+        </Button>
+        
+        
         <Border Grid.Row="2"
                 Grid.Column="2"
                 Margin="20,20,40,30"
