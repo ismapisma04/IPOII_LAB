@@ -4,8 +4,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Xaml.Input;
 
 namespace ProyectoVacioUWP_Base
 {

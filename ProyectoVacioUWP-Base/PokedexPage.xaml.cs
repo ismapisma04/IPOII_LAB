@@ -1,4 +1,3 @@
-using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +5,6 @@ using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Input;
 
 namespace ProyectoVacioUWP_Base
 {
@@ -248,7 +246,7 @@ namespace ProyectoVacioUWP_Base
                 .ToList();
         }
 
-        private void AplicarFiltros(bool notificar = false)
+        private void AplicarFiltros()
         {
             string textoBusqueda = txtBusquedaPokemon.Text?.Trim().ToLower() ?? "";
             string tipo1 = ObtenerTipoSeleccionado(cbTipo1);
@@ -275,30 +273,7 @@ namespace ProyectoVacioUWP_Base
                     ObtenerTiposPokemon(p).Any(t => t.Equals(tipo2, StringComparison.OrdinalIgnoreCase)));
             }
 
-            var listaResultado = resultado.ToList();
-
-            //NOTIFICACIÓN
-
-            if (notificar && !string.IsNullOrWhiteSpace(textoBusqueda))
-            {
-                if (listaResultado.Count == 1)
-                {
-                    var p = listaResultado.First();
-
-                    new ToastContentBuilder()
-                        .AddText($"¡Has encontrado a {p.Nombre}!")
-                        .AddText("Consulta su ficha en la Pokédex")
-                        .Show();
-                }
-                else if (listaResultado.Count == 0)
-                {
-                    new ToastContentBuilder()
-                        .AddText("Pokémon no encontrado")
-                        .AddText("Prueba con otro nombre")
-                        .Show();
-                }
-            }
-            MostrarPokemons(listaResultado);
+            MostrarPokemons(resultado);
         }
 
         private string ObtenerTipoSeleccionado(ComboBox comboBox)
@@ -318,10 +293,10 @@ namespace ProyectoVacioUWP_Base
             return valor;
         }
 
-        //private void txtBusquedaPokemon_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-            
-        //}
+        private void txtBusquedaPokemon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            AplicarFiltros();
+        }
 
         private void Filtros_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -330,13 +305,9 @@ namespace ProyectoVacioUWP_Base
                 return;
             }
 
-            AplicarFiltros(false);
+            AplicarFiltros();
         }
 
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-            AplicarFiltros(true); 
-        }
         private void btnLimpiarFiltros_Click(object sender, RoutedEventArgs e)
         {
             txtBusquedaPokemon.Text = string.Empty;
@@ -350,6 +321,5 @@ namespace ProyectoVacioUWP_Base
         {
             this.Frame.Navigate(typeof(PokemonDetallePage), pokemon);
         }
-
     }
 }
