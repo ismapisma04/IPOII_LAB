@@ -51,5 +51,23 @@ namespace ProyectoVacioUWP_Base
             control.VerticalAlignment = VerticalAlignment.Center;
             control.IsHitTestVisible = false;
         }
+
+        public static void PrepararParaSeleccion(iPokemon pokemonVisual, UserControl control)
+        {
+            pokemonVisual.verFondo(false);
+            pokemonVisual.verFilaVida(false);
+            pokemonVisual.verFilaEnergia(false);
+            pokemonVisual.verPocionVida(false);
+            pokemonVisual.verPocionEnergia(false);
+            pokemonVisual.verNombre(false);
+            pokemonVisual.verEscudo(false);
+            pokemonVisual.activarAniIdle(true);
+
+            control.Width = 220;
+            control.Height = 160;
+            control.HorizontalAlignment = HorizontalAlignment.Center;
+            control.VerticalAlignment = VerticalAlignment.Center;
+            control.IsHitTestVisible = false;
+        }
     }
 }

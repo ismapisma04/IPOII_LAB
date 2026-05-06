@@ -5,8 +5,174 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid>
-        <TextBlock Text="Combate" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    Background="#FFF7F7F7">
+
+    <Page.Resources>
+        <Storyboard x:Name="FadeNegroStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetName="overlayNegro"
+                Storyboard.TargetProperty="Opacity"
+                To="1"
+                Duration="0:0:1.2" />
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid x:Name="rootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Indicadores superiores -->
+        <TextBlock x:Name="txtTurnoP1"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Text="P1"
+                   FontSize="72"
+                   FontWeight="Bold"
+                   Foreground="Black"
+                   HorizontalAlignment="Center"
+                   Margin="0,25,0,10"/>
+
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                Margin="20,20,20,10"
+                Padding="18"
+                CornerRadius="35"
+                BorderBrush="Black"
+                BorderThickness="3"
+                Background="White"
+                MinHeight="280"
+                MaxWidth="520"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+
+            <GridView x:Name="gvPokemons"
+                      IsItemClickEnabled="True"
+                      SelectionMode="None"
+                      IsTabStop="False"
+                      ItemClick="gvPokemons_ItemClick"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal"
+                                       MaximumRowsOrColumns="3"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="150"
+                                Height="130"
+                                Margin="10"
+                                Padding="6"
+                                Background="Transparent"
+                                BorderBrush="#22000000"
+                                BorderThickness="1"
+                                CornerRadius="16">
+                            <Viewbox Stretch="Uniform"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Stretch">
+                                <ContentPresenter Content="{Binding}"/>
+                            </Viewbox>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Border>
+
+        <TextBlock x:Name="txtTurnoP2"
+                   Grid.Row="0"
+                   Grid.Column="2"
+                   Text="P2"
+                   FontSize="72"
+                   FontWeight="Bold"
+                   Foreground="Black"
+                   HorizontalAlignment="Center"
+                   Margin="0,25,0,10"/>
+
+        <!-- Zona inferior -->
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Margin="40,20,20,30"
+                Padding="15"
+                Width="300"
+                Height="260"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                CornerRadius="30"
+                BorderBrush="Black"
+                BorderThickness="3"
+                Background="White">
+            <Grid x:Name="contenedorP1">
+                <TextBlock x:Name="txtCajaP1"
+                           Text="Pokémon del Player 1"
+                           TextWrapping="Wrap"
+                           FontSize="34"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <Button x:Name="btnVersus"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="220"
+                Height="160"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                BorderThickness="0"
+                IsEnabled="False"
+                Opacity="0.45"
+                Click="btnVersus_Click">
+            <Image Source="ms-appx:///Assets/versusimage.png"
+                   Stretch="Uniform"/>
+        </Button>
+
+        <Border Grid.Row="2"
+                Grid.Column="2"
+                Margin="20,20,40,30"
+                Padding="15"
+                Width="300"
+                Height="260"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                CornerRadius="30"
+                BorderBrush="Black"
+                BorderThickness="3"
+                Background="White">
+            <Grid x:Name="contenedorP2">
+                <TextBlock x:Name="txtCajaP2"
+                           Text="Pokémon del Player 2"
+                           TextWrapping="Wrap"
+                           FontSize="34"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Capa de negro para transición -->
+        <Grid x:Name="overlayNegro"
+              Background="Black"
+              Opacity="0"
+              Visibility="Visible"
+              Grid.RowSpan="3"
+              Grid.ColumnSpan="3"
+              IsHitTestVisible="False"/>
     </Grid>
 </Page>
