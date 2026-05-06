@@ -118,17 +118,19 @@
 
                 <GridView.ItemTemplate>
                     <DataTemplate>
-                        <Border Width="120"
-                        Height="105"
-                        Margin="8"
-                        Padding="4"
-                        Background="Transparent"
-                        CornerRadius="12">
-                            <Viewbox Stretch="Uniform"
-                             HorizontalAlignment="Center"
-                             VerticalAlignment="Center">
-                                <ContentPresenter Content="{Binding}"/>
-                            </Viewbox>
+                        <Border Width="90"
+                Height="75"
+                Margin="6"
+                Padding="4"
+                Background="#FFF2F2F2"
+                BorderBrush="#FFB0B0B0"
+                BorderThickness="1"
+                CornerRadius="14"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                            <ContentPresenter Content="{Binding VistaCompacta}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
                         </Border>
                     </DataTemplate>
                 </GridView.ItemTemplate>

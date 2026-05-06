@@ -1,5 +1,7 @@
-﻿using Windows.UI.Xaml;
+﻿using Windows.UI;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace ProyectoVacioUWP_Base
 {
@@ -11,7 +13,12 @@ namespace ProyectoVacioUWP_Base
             {
                 return ClonarPokemon(new EmpoleonARS(), pokemon);
             }
-            //NOTE: Poner aqui los demas pokemons, siguiendo el mismo formato que el de arriba
+
+            // NOTE: Añade aquí el resto de Pokémon siguiendo este formato.
+            // if (pokemon is InfernapeXXX)
+            // {
+            //     return ClonarPokemon(new InfernapeXXX(), pokemon);
+            // }
 
             return null;
         }
@@ -63,11 +70,38 @@ namespace ProyectoVacioUWP_Base
             pokemonVisual.verEscudo(false);
             pokemonVisual.activarAniIdle(true);
 
-            control.Width = 170;
-            control.Height = 125;
+            control.Width = 150;
+            control.Height = 150;
             control.HorizontalAlignment = HorizontalAlignment.Center;
             control.VerticalAlignment = VerticalAlignment.Center;
             control.IsHitTestVisible = false;
+        }
+
+        public static Viewbox CrearVistaCompactaSeleccion(iPokemon pokemonOriginal)
+        {
+            UserControl control = CrearControlPokemon(pokemonOriginal);
+
+            if (control == null)
+                return null;
+
+            if (control is iPokemon pokemonVisual)
+            {
+                PrepararParaSeleccion(pokemonVisual, control);
+            }
+
+            return new Viewbox
+            {
+                Stretch = Stretch.UniformToFill,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Child = new Border
+                {
+                    Width = 140,
+                    Height = 110,
+                    Background = new SolidColorBrush(Colors.Transparent),
+                    Child = control
+                }
+            };
         }
     }
 }

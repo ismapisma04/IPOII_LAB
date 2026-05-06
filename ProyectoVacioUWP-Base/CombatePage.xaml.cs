@@ -9,6 +9,12 @@ namespace ProyectoVacioUWP_Base
 {
     public sealed partial class CombatePage : Page
     {
+        public class PokemonSeleccionItem
+        {
+            public iPokemon PokemonReal { get; set; }
+            public Viewbox VistaCompacta { get; set; }
+        }
+
         private List<iPokemon> listaPokemons = new List<iPokemon>();
 
         private iPokemon pokemonSeleccionadoP1;
@@ -30,18 +36,24 @@ namespace ProyectoVacioUWP_Base
         private void CargarPokemonsEnGrid()
         {
             listaPokemons = PokemonCatalogo.CrearPokemons();
-            gvPokemons.Items.Clear();
+
+            var itemsSeleccion = new List<PokemonSeleccionItem>();
 
             foreach (iPokemon pokemon in listaPokemons)
             {
-                UserControl control = PokemonFactory.CrearControlPokemon(pokemon);
+                Viewbox vistaCompacta = PokemonFactory.CrearVistaCompactaSeleccion(pokemon);
 
-                if (control is iPokemon pokemonVisual)
+                if (vistaCompacta != null)
                 {
-                    PokemonFactory.PrepararParaSeleccion(pokemonVisual, control);
-                    gvPokemons.Items.Add(control);
+                    itemsSeleccion.Add(new PokemonSeleccionItem
+                    {
+                        PokemonReal = pokemon,
+                        VistaCompacta = vistaCompacta
+                    });
                 }
             }
+
+            gvPokemons.ItemsSource = itemsSeleccion;
         }
 
         private void ActualizarIndicadoresTurno()
@@ -55,14 +67,15 @@ namespace ProyectoVacioUWP_Base
             scaleP2.ScaleX = turnoSeleccion == 2 ? 1.28 : 1.0;
             scaleP2.ScaleY = turnoSeleccion == 2 ? 1.28 : 1.0;
         }
+
         private void gvPokemons_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!(e.ClickedItem is UserControl controlPulsado))
+            if (!(e.ClickedItem is PokemonSeleccionItem itemPulsado))
             {
                 return;
             }
 
-            iPokemon pokemonBase = ObtenerPokemonDesdeControl(controlPulsado);
+            iPokemon pokemonBase = itemPulsado.PokemonReal;
 
             if (pokemonBase == null)
             {
@@ -84,21 +97,6 @@ namespace ProyectoVacioUWP_Base
                 ActualizarIndicadoresTurno();
                 ActivarBotonVersus();
             }
-        }
-
-        private iPokemon ObtenerPokemonDesdeControl(UserControl control)
-        {
-            foreach (iPokemon pokemon in listaPokemons)
-            {
-                if (control is iPokemon pokemonVisual &&
-                    pokemonVisual.Nombre == pokemon.Nombre &&
-                    pokemonVisual.Tipo == pokemon.Tipo)
-                {
-                    return pokemon;
-                }
-            }
-
-            return null;
         }
 
         private void MostrarPokemonEnCaja(Grid contenedor, iPokemon pokemonOriginal, bool esPlayer1)
@@ -126,13 +124,13 @@ namespace ProyectoVacioUWP_Base
             }
         }
 
-
         private void ActivarBotonVersus()
         {
             btnVersus.IsEnabled = true;
             MostrarVsStoryboard.Begin();
             RespiracionVsStoryboard.Begin();
         }
+
         private void PrepararTemporizador()
         {
             temporizadorInicioCombate = new DispatcherTimer();
