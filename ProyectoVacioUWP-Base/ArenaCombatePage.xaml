@@ -4,45 +4,263 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Background="#FFF7F7F7">
 
-    <Grid Background="White" Padding="24">
+    <Grid Padding="24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Arena de combate"
-                   FontSize="30"
-                   FontWeight="Bold"
-                   HorizontalAlignment="Center"
-                   Margin="0,0,0,20"/>
+        <Border Background="White"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="28"
+                Padding="24">
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Column="0" HorizontalAlignment="Center" Spacing="12">
-                <TextBlock x:Name="txtNombreP1"
-                           Text="Pokemon P1"
-                           FontSize="24"
-                           HorizontalAlignment="Center"/>
-                <Grid x:Name="contenedorP1"
-                      Width="320"
-                      Height="320"/>
-            </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="1" HorizontalAlignment="Center" Spacing="12">
-                <TextBlock x:Name="txtNombreP2"
-                           Text="Pokemon P2"
-                           FontSize="24"
-                           HorizontalAlignment="Center"/>
-                <Grid x:Name="contenedorP2"
-                      Width="320"
-                      Height="320"/>
-            </StackPanel>
-        </Grid>
+                <!-- LADO IZQUIERDO -->
+                <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0,16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ProgressBar x:Name="pbVidaP1"
+                                 Grid.Row="0"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Value="100"
+                                 Height="28"
+                                 Foreground="Red"
+                                 Background="#FF8B0000"
+                                 BorderThickness="0"
+                                 Margin="0,0,0,8"/>
+
+                    <ProgressBar x:Name="pbEnergiaP1"
+                                 Grid.Row="1"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Value="100"
+                                 Height="24"
+                                 Foreground="Yellow"
+                                 Background="#FFB8860B"
+                                 BorderThickness="0"/>
+                </Grid>
+
+                <!-- LADO DERECHO -->
+                <Grid Grid.Row="0" Grid.Column="2" Margin="0,0,0,16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ProgressBar x:Name="pbVidaP2"
+                                 Grid.Row="0"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Value="100"
+                                 Height="28"
+                                 Foreground="Red"
+                                 Background="#FF8B0000"
+                                 BorderThickness="0"
+                                 Margin="0,0,0,8"/>
+
+                    <ProgressBar x:Name="pbEnergiaP2"
+                                 Grid.Row="1"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Value="100"
+                                 Height="24"
+                                 Foreground="Yellow"
+                                 Background="#FFB8860B"
+                                 BorderThickness="0"/>
+                </Grid>
+
+                <!-- ZONA CENTRAL IZQUIERDA -->
+                <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Margin="8"
+                            CornerRadius="26"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            Background="White"
+                            MinHeight="340">
+                        <Grid x:Name="contenedorP1"
+                              Margin="8"/>
+                    </Border>
+
+                    <TextBlock x:Name="txtNombreP1"
+                               Grid.Row="1"
+                               Text="Pokemon del P1"
+                               FontSize="30"
+                               FontWeight="Normal"
+                               HorizontalAlignment="Center"
+                               Margin="0,12,0,0"/>
+                </Grid>
+
+                <!-- ZONA CENTRAL DERECHA -->
+                <Grid Grid.Row="1" Grid.Column="2" Margin="0,0,0,16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0"
+                            Margin="8"
+                            CornerRadius="26"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            Background="White"
+                            MinHeight="340">
+                        <Grid x:Name="contenedorP2"
+                              Margin="8"/>
+                    </Border>
+
+                    <TextBlock x:Name="txtNombreP2"
+                               Grid.Row="1"
+                               Text="Pokemon del P2"
+                               FontSize="30"
+                               FontWeight="Normal"
+                               HorizontalAlignment="Center"
+                               Margin="0,12,0,0"/>
+                </Grid>
+
+                <!-- BOTONES P1 -->
+                <Grid Grid.Row="2" Grid.Column="0" Margin="8,8,8,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnDebilP1"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Content="Débil"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"
+                            Margin="0,0,0,12"/>
+
+                    <Button x:Name="btnFuerteP1"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Content="Fuerte"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"
+                            Margin="0,0,0,12"/>
+
+                    <Button x:Name="btnDormirP1"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Content="Dormir"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"/>
+
+                    <Button x:Name="btnEscudoP1"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Content="Escudo"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"/>
+                </Grid>
+
+                <!-- BOTONES P2 -->
+                <Grid Grid.Row="2" Grid.Column="2" Margin="8,8,8,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnDebilP2"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Content="Débil"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"
+                            Margin="0,0,0,12"/>
+
+                    <Button x:Name="btnFuerteP2"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Content="Fuerte"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"
+                            Margin="0,0,0,12"/>
+
+                    <Button x:Name="btnDormirP2"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Content="Dormir"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"/>
+
+                    <Button x:Name="btnEscudoP2"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Content="Escudo"
+                            Height="64"
+                            FontSize="24"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="3"
+                            CornerRadius="16"/>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </Page>
