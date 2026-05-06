@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoVacioUWP_Base
 {
-    interface iPokemon
+    public interface iPokemon
     {  
         //Todas las propiedades deben devolver la información correspondiente (get). Además debe poderse actualizar el valor, el menos, de la Vida y la Energía (set)
         double Vida { get; set; }

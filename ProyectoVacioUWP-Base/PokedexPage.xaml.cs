@@ -24,20 +24,7 @@ namespace ProyectoVacioUWP_Base
 
         private void CargarPokemons()
         {
-            listaPokemons.Clear();
-
-            Type[] tiposPokemon =
-            {
-                typeof(EmpoleonARS)
-            };
-
-            foreach (Type tipo in tiposPokemon)
-            {
-                if (Activator.CreateInstance(tipo) is iPokemon pokemon)
-                {
-                    listaPokemons.Add(pokemon);
-                }
-            }
+            listaPokemons = PokemonCatalogo.CrearPokemons();
         }
 
         private void CargarTiposDisponibles()
@@ -75,9 +62,10 @@ namespace ProyectoVacioUWP_Base
 
             foreach (iPokemon pokemon in pokemonsFiltrados)
             {
-                if (CrearControlPokemon(pokemon) is UserControl control && control is iPokemon pokemonVisual)
+                if (PokemonFactory.CrearControlPokemon(pokemon) is UserControl control &&
+                    control is iPokemon pokemonVisual)
                 {
-                    PrepararPokemonParaPokedex(pokemonVisual, control);
+                    PokemonFactory.PrepararParaPokedex(pokemonVisual, control);
 
                     Border tarjeta = CrearTarjetaPokemon(control, pokemon);
                     spPokemons.Children.Add(tarjeta);
@@ -87,47 +75,6 @@ namespace ProyectoVacioUWP_Base
             txtResultados.Text = pokemonsFiltrados.Count == listaPokemons.Count
                 ? $"Mostrando todos los Pokémon ({pokemonsFiltrados.Count})"
                 : $"Resultados encontrados: {pokemonsFiltrados.Count}";
-        }
-
-        private UserControl CrearControlPokemon(iPokemon pokemon)
-        {
-            if (pokemon is EmpoleonARS)
-            {
-                EmpoleonARS vista = new EmpoleonARS
-                {
-                    Nombre = pokemon.Nombre,
-                    Vida = pokemon.Vida,
-                    Energia = pokemon.Energia,
-                    Categoría = pokemon.Categoría,
-                    Tipo = pokemon.Tipo,
-                    Altura = pokemon.Altura,
-                    Peso = pokemon.Peso,
-                    Evolucion = pokemon.Evolucion,
-                    Descripcion = pokemon.Descripcion
-                };
-
-                return vista;
-            }
-
-            return null;
-        }
-
-        private void PrepararPokemonParaPokedex(iPokemon pokemon, UserControl control)
-        {
-            pokemon.verFondo(false);
-            pokemon.verFilaVida(false);
-            pokemon.verFilaEnergia(false);
-            pokemon.verPocionVida(false);
-            pokemon.verPocionEnergia(false);
-            pokemon.verNombre(false);
-            pokemon.verEscudo(false);
-            pokemon.activarAniIdle(true);
-
-            control.Width = 260;
-            control.Height = 180;
-            control.HorizontalAlignment = HorizontalAlignment.Left;
-            control.VerticalAlignment = VerticalAlignment.Center;
-            control.IsHitTestVisible = false;
         }
 
         private Border CrearTarjetaPokemon(UserControl control, iPokemon pokemon)
