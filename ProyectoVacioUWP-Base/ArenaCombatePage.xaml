@@ -140,7 +140,8 @@
                     Margin="0,0,0,12"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnAtaqueDebilP1_Click">
                 <TextBlock Text="Débil"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -155,7 +156,8 @@
                     Margin="0,0,0,12"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnAtaqueFuerteP1_Click">
                 <TextBlock Text="Fuerte"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -169,7 +171,8 @@
                     Height="62"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnDormirP1_Click">
                 <TextBlock Text="Dormir"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -183,7 +186,8 @@
                     Height="62"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnEscudoP1_Click">
                 <TextBlock Text="Escudo"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -211,7 +215,8 @@
                     Margin="0,0,0,12"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnAtaqueDebilP2_Click">
                 <TextBlock Text="Débil"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -226,7 +231,8 @@
                     Margin="0,0,0,12"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnAtaqueFuerteP2_Click">
                 <TextBlock Text="Fuerte"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -240,7 +246,8 @@
                     Height="62"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnDormirP2_Click">
                 <TextBlock Text="Dormir"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -254,7 +261,8 @@
                     Height="62"
                     Background="White"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="btnEscudoP2_Click">
                 <TextBlock Text="Escudo"
                            FontSize="24"
                            FontWeight="SemiBold"
@@ -262,5 +270,11 @@
                            TextAlignment="Center"/>
             </Button>
         </Grid>
+
+        <!-- Mensaje de Fin de Combate -->
+        <TextBlock x:Name="txtFinCombate" Grid.Row="1" Grid.ColumnSpan="3" Text=""
+                   FontSize="60" FontWeight="Bold" Foreground="Goldenrod"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Visibility="Collapsed"/>
     </Grid>
 </Page>

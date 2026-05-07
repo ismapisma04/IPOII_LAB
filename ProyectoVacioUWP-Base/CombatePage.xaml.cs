@@ -9,6 +9,12 @@ namespace ProyectoVacioUWP_Base
 {
     public sealed partial class CombatePage : Page
     {
+        public class CombateParametros
+        {
+            public string NombrePokemonP1 { get; set; }
+            public string NombrePokemonP2 { get; set; }
+        }
+
         public class PokemonSeleccionItem
         {
             public iPokemon PokemonReal { get; set; }
@@ -21,8 +27,7 @@ namespace ProyectoVacioUWP_Base
         private iPokemon pokemonSeleccionadoP2;
 
         private int turnoSeleccion = 1;
-
-        private DispatcherTimer temporizadorInicioCombate;
+        private CombateParametros parametrosPendientes;
 
         public CombatePage()
         {
@@ -30,7 +35,12 @@ namespace ProyectoVacioUWP_Base
 
             CargarPokemonsEnGrid();
             ActualizarIndicadoresTurno();
-            PrepararTemporizador();
+            FadeNegroStoryboard.Completed += FadeNegroStoryboard_Completed;
+        }
+
+        private void FadeNegroStoryboard_Completed(object sender, object e)
+        {
+            Frame.Navigate(typeof(ArenaCombatePage), parametrosPendientes);
         }
 
         private void CargarPokemonsEnGrid()
@@ -131,13 +141,6 @@ namespace ProyectoVacioUWP_Base
             RespiracionVsStoryboard.Begin();
         }
 
-        private void PrepararTemporizador()
-        {
-            temporizadorInicioCombate = new DispatcherTimer();
-            temporizadorInicioCombate.Interval = TimeSpan.FromSeconds(2);
-            temporizadorInicioCombate.Tick += TemporizadorInicioCombate_Tick;
-        }
-
         private void btnVersus_Click(object sender, RoutedEventArgs e)
         {
             if (pokemonSeleccionadoP1 == null || pokemonSeleccionadoP2 == null)
@@ -145,17 +148,12 @@ namespace ProyectoVacioUWP_Base
                 return;
             }
 
-            var parametros = new CombateParametros
+            parametrosPendientes = new CombateParametros
             {
                 NombrePokemonP1 = pokemonSeleccionadoP1.Nombre,
                 NombrePokemonP2 = pokemonSeleccionadoP2.Nombre
             };
 
-            Frame.Navigate(typeof(ArenaCombatePage), parametros);
-        }
-        private void TemporizadorInicioCombate_Tick(object sender, object e)
-        {
-            temporizadorInicioCombate.Stop();
             FadeNegroStoryboard.Begin();
         }
     }
