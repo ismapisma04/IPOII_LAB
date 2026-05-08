@@ -18,6 +18,9 @@ namespace ProyectoVacioUWP_Base
         private bool p1Defendiendo = false;
         private bool p2Defendiendo = false;
 
+        private bool p1Herido = false;
+        private bool p2Herido = false;
+
         private DispatcherTimer gameTimer;
         private bool combateTerminado = false;
         private bool accionEnCurso = false;
@@ -132,10 +135,10 @@ namespace ProyectoVacioUWP_Base
             // No se puede comprobar si está dormido sin modificar la interfaz,
             // por lo que la energía se regenerará siempre.
             if (pokemonP1 != null)
-                pokemonP1.Energia = Math.Min(100, pokemonP1.Energia + RECARGA_ENERGIA_TICK);
+                pokemonP1.Energia = Math.Min(150, pokemonP1.Energia + RECARGA_ENERGIA_TICK);
 
             if (pokemonP2 != null)
-                pokemonP2.Energia = Math.Min(100, pokemonP2.Energia + RECARGA_ENERGIA_TICK);
+                pokemonP2.Energia = Math.Min(150, pokemonP2.Energia + RECARGA_ENERGIA_TICK);
 
             ActualizarBarras();
             EvaluarEstados();
@@ -143,13 +146,38 @@ namespace ProyectoVacioUWP_Base
 
         private void EvaluarEstados()
         {
-            if (pokemonP1.Vida < 30 && pokemonP1.Vida > 0) pokemonP1.animacionHerido();
-            if (pokemonP2.Vida < 30 && pokemonP2.Vida > 0) pokemonP2.animacionHerido();
+            if (pokemonP1 == null || pokemonP2 == null) return;
 
-            if (pokemonP1.Vida <= 0) FinCombate(pokemonP2.Nombre);
-            else if (pokemonP2.Vida <= 0) FinCombate(pokemonP1.Nombre);
+            bool p1EstaHeridoAhora = pokemonP1.Vida < 30 && pokemonP1.Vida > 0;
+            bool p2EstaHeridoAhora = pokemonP2.Vida < 30 && pokemonP2.Vida > 0;
+
+            if (p1EstaHeridoAhora && !p1Herido)
+            {
+                pokemonP1.animacionHerido();
+                p1Herido = true;
+            }
+            else if (!p1EstaHeridoAhora && p1Herido)
+            {
+                pokemonP1.animacionNoHerido();
+                p1Herido = false;
+            }
+
+            if (p2EstaHeridoAhora && !p2Herido)
+            {
+                pokemonP2.animacionHerido();
+                p2Herido = true;
+            }
+            else if (!p2EstaHeridoAhora && p2Herido)
+            {
+                pokemonP2.animacionNoHerido();
+                p2Herido = false;
+            }
+
+            if (pokemonP1.Vida <= 0)
+                FinCombate(pokemonP2.Nombre);
+            else if (pokemonP2.Vida <= 0)
+                FinCombate(pokemonP1.Nombre);
         }
-
         private void FinCombate(string ganador)
         {
             if (combateTerminado) return;
