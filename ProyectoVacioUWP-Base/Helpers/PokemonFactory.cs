@@ -1,7 +1,10 @@
-﻿using Windows.UI;
+﻿using System;
+using System.Collections.Generic;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace ProyectoVacioUWP_Base
 {
@@ -9,18 +12,27 @@ namespace ProyectoVacioUWP_Base
     {
         public static UserControl CrearControlPokemon(iPokemon pokemon)
         {
-            if (pokemon is EmpoleonARS)
-            {
-                return ClonarPokemon(new EmpoleonARS(), pokemon);
-            }
+            if (pokemon == null)
+                return null;
 
-            // NOTE: Añade aquí el resto de Pokémon siguiendo este formato.
-            // if (pokemon is InfernapeXXX)
-            // {
-            //     return ClonarPokemon(new InfernapeXXX(), pokemon);
-            // }
+            string nombreTipo = pokemon.GetType().Name;
 
-            return null;
+            Type tipoControl = Type.GetType($"ProyectoVacioUWP_Base.{nombreTipo}");
+
+            if (tipoControl == null)
+                return null;
+
+            UserControl control = Activator.CreateInstance(tipoControl) as UserControl;
+
+            if (control == null)
+                return null;
+
+            control = ClonarPokemon(control, pokemon);
+
+            string carpetaAssets = $"Pokemons/{nombreTipo}/Assets{nombreTipo}";
+            CorregirRutasImagenes(control, carpetaAssets);
+
+            return control;
         }
 
         private static UserControl ClonarPokemon(UserControl vistaBase, iPokemon origen)
@@ -39,6 +51,66 @@ namespace ProyectoVacioUWP_Base
             }
 
             return vistaBase;
+        }
+
+        private static void CorregirRutasImagenes(DependencyObject raiz, string carpetaAssets)
+        {
+            foreach (Image imagen in BuscarElementosVisuales<Image>(raiz))
+            {
+                if (imagen.Source is BitmapImage bitmap && bitmap.UriSource != null)
+                {
+                    string rutaOriginal = bitmap.UriSource.ToString();
+                    string nombreArchivo = ObtenerNombreArchivo(rutaOriginal);
+
+                    if (!string.IsNullOrWhiteSpace(nombreArchivo))
+                    {
+                        imagen.Source = new BitmapImage(
+                            new Uri($"ms-appx:///{carpetaAssets}/{nombreArchivo}")
+                        );
+                    }
+                }
+            }
+        }
+
+        private static string ObtenerNombreArchivo(string rutaOriginal)
+        {
+            if (string.IsNullOrWhiteSpace(rutaOriginal))
+                return null;
+
+            string rutaNormalizada = rutaOriginal.Replace("\\", "/");
+
+            int indiceQuery = rutaNormalizada.IndexOf("?");
+            if (indiceQuery >= 0)
+            {
+                rutaNormalizada = rutaNormalizada.Substring(0, indiceQuery);
+            }
+
+            string[] partes = rutaNormalizada.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (partes.Length == 0)
+                return null;
+
+            return partes[partes.Length - 1];
+        }
+
+        private static IEnumerable<T> BuscarElementosVisuales<T>(DependencyObject raiz)
+            where T : DependencyObject
+        {
+            if (raiz == null)
+                yield break;
+
+            int totalHijos = Windows.UI.Xaml.Media.VisualTreeHelper.GetChildrenCount(raiz);
+
+            for (int i = 0; i < totalHijos; i++)
+            {
+                DependencyObject hijo = Windows.UI.Xaml.Media.VisualTreeHelper.GetChild(raiz, i);
+
+                if (hijo is T elemento)
+                    yield return elemento;
+
+                foreach (T descendiente in BuscarElementosVisuales<T>(hijo))
+                    yield return descendiente;
+            }
         }
 
         public static void PrepararParaPokedex(iPokemon pokemonVisual, UserControl control)
