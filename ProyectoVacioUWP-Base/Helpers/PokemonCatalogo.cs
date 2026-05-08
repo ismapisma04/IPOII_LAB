@@ -9,8 +9,8 @@ namespace ProyectoVacioUWP_Base
         {
             return new List<Type>
             {
-                typeof(EmpoleonARS),
-
+                typeof(EmpoleonARS), typeof(SnorlaxISU),
+                
                 // NOTE: Agregar aqui los demas pokemons, siguiendo el mismo formato que el de arriba
             };
         }
