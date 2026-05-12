@@ -4,12 +4,46 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProyectoVacioUWP_Base"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local1="using:ProyectoUWPenBlanco"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <!-- Instance of the Empoleon UserControl -->
-        <local:EmpoleonARS HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled">
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500" />
+                <RowDefinition Height="500" />
+                <RowDefinition Height="500" />
+                <!-- Añade aquí más RowDefinitions con Height="500" cuando agregues más filas -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Instance of the Empoleon UserControl -->
+            <Viewbox Grid.Row="0" Grid.Column="0" Margin="10">
+                <local:EmpoleonARS x:Name="empoleon"/>
+            </Viewbox>
+
+            <!-- Instance of the Snorlax UserControl -->
+            <Viewbox Grid.Row="0" Grid.Column="1" Margin="10">
+                <local:SnorlaxISU x:Name="snorlax"/>
+            </Viewbox>
+
+            <!-- Instance of the Rotom UserControl -->
+            <Viewbox Grid.Row="1" Grid.Column="0" Margin="10">
+                <local:RotomPVA x:Name="rotom"/>
+            </Viewbox>
+
+            <!-- Instance of the Gengar UserControl -->
+            <Viewbox Grid.Row="1" Grid.Column="1" Margin="10">
+                <local:GengarMBGCS x:Name="gengar"/>
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="0" Margin="10">
+                <local:BrasitalEHA x:Name="brasital"/>
+            </Viewbox>
+            
+        </Grid>
+    </ScrollViewer>
 </Page>

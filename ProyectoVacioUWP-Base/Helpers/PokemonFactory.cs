@@ -15,9 +15,7 @@ namespace ProyectoVacioUWP_Base
             if (pokemon == null)
                 return null;
 
-            string nombreTipo = pokemon.GetType().Name;
-
-            Type tipoControl = Type.GetType($"ProyectoVacioUWP_Base.{nombreTipo}");
+            Type tipoControl = pokemon.GetType();
 
             if (tipoControl == null)
                 return null;
@@ -29,7 +27,18 @@ namespace ProyectoVacioUWP_Base
 
             control = ClonarPokemon(control, pokemon);
 
-            string carpetaAssets = $"Pokemons/{nombreTipo}/Assets{nombreTipo}";
+            string nombreTipo = tipoControl.Name;
+
+            string carpetaAssets;
+            if (nombreTipo == "RotomPVA")
+            {
+                carpetaAssets = $"Pokemons/{nombreTipo}/AssetsPVA";
+            }
+            else
+            {
+                carpetaAssets = $"Pokemons/{nombreTipo}/Assets{nombreTipo}";
+            }
+
             CorregirRutasImagenes(control, carpetaAssets);
 
             return control;

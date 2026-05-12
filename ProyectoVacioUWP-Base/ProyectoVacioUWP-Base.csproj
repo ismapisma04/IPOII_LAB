@@ -130,7 +130,14 @@
     <Compile Include="PokemonDetallePage.xaml.cs">
       <DependentUpon>PokemonDetallePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pokemons\SnorlaxISU\iPokemon.cs" />
+    <Compile Include="Pokemons\BrasitalEHA\BrasitalEHA.cs" />
+    <Compile Include="Pokemons\GengarMBGCS\GengarMBGCS.xaml.cs">
+      <DependentUpon>GengarMBGCS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\RotomPVA\iPokemon.cs" />
+    <Compile Include="Pokemons\RotomPVA\RotomPVA_.xaml.cs">
+      <DependentUpon>RotomPVA_.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pokemons\SnorlaxISU\SnorlaxISU.xaml.cs">
       <DependentUpon>SnorlaxISU.xaml</DependentUpon>
     </Compile>
@@ -151,7 +158,6 @@
       <DependentUpon>AcercaDePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pokemons\EmpoleonARS\EmpoleonARS.xaml.cs" />
-    <Compile Include="Pokemons\EmpoleonARS\iPokemon.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -167,6 +173,14 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\background2.jpg" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\StoreLogo.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Wide310x150Logo.scale-200.png" />
     <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\agua.png" />
     <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\aureola.png" />
     <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\burbujas.mp3" />
@@ -196,6 +210,44 @@
     <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Wide310x150Logo.scale-200.png" />
     <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\yellow-potion.png" />
     <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\zzz.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\corazon.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\energia.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar lengua.jpg" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Gengar.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_ataquefuerte.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_cansado.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_pokemon.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_risa.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\humo.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\mansion.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\paisajePokemon.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\red-potion.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\SplashScreen.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\StoreLogo.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\sudor.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\yellow-potion.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\ataque_fuerte.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\corazon.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\dormido.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\energia.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Escudo.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Fondo.jpg" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\musica_fondo.mp3" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\rotom_cry.mp4" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\rotom_cry_fuerte.mp4" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\StoreLogo.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\yellow-potion.png" />
     <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Corazón.png" />
     <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\LockScreenLogo.scale-200.png" />
     <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Rayo.png" />
@@ -244,7 +296,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pokemons\BrasitalEHA\BrasitalEHA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pokemons\EmpoleonARS\EmpoleonARS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\GengarMBGCS\GengarMBGCS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\RotomPVA\RotomPVA_.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
