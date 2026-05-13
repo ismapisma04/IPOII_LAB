@@ -10,7 +10,7 @@ namespace ProyectoVacioUWP_Base
         {
             return new List<Type>
             {
-                typeof(EmpoleonARS), typeof(SnorlaxISU), typeof(RotomPVA), typeof(GengarMBGCS), typeof(BrasitalEHA)
+                typeof(EmpoleonARS), typeof(SnorlaxISU), typeof(RotomPVA), typeof(GengarMBGCS), typeof(BrasitalEHA), 
                 
                 // NOTE: Agregar aqui los demas pokemons, siguiendo el mismo formato que el de arriba
             };

@@ -14,6 +14,7 @@
                 <RowDefinition Height="500" />
                 <RowDefinition Height="500" />
                 <RowDefinition Height="500" />
+                <RowDefinition Height="500" />
                 <!-- Añade aquí más RowDefinitions con Height="500" cuando agregues más filas -->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -41,7 +42,7 @@
                 <local:GengarMBGCS x:Name="gengar"/>
             </Viewbox>
             <Viewbox Grid.Row="2" Grid.Column="0" Margin="10">
-                <local:BrasitalEHA x:Name="brasital"/>
+                <local1:BrasitalEHA x:Name="brasital"/>
             </Viewbox>
             
         </Grid>

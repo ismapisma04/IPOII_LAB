@@ -8,6 +8,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="Bienvenido a la Home de IPO II" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!-- Al poner la imagen primero en el Grid, se renderiza al fondo (detrás del texto) -->
+        <Image Source="/Assets/Bola_invoca_pokemons.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <!-- Contenedor con fondo semitransparente para el título -->
+        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,281,0,0" Background="#B3000000" CornerRadius="10" Padding="20,10">
+            <TextBlock Text="Bienvenido al Sistema de Combates de Pokemons" FontSize="35" Foreground="White" FontWeight="Bold" />
+        </Border>
+
+        <!-- Contenedor con fondo semitransparente para el subtítulo -->
+        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,644,0,0" Background="#B3000000" CornerRadius="10" Padding="20,10">
+            <TextBlock Text="Selecciona una opción en el menú lateral para comenzar a explorar." FontSize="28" Foreground="White" FontWeight="SemiBold"/>
+        </Border>
     </Grid>
 </Page>

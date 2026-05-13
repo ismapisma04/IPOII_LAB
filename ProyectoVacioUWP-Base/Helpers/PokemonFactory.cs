@@ -34,6 +34,10 @@ namespace ProyectoVacioUWP_Base
             {
                 carpetaAssets = $"Pokemons/{nombreTipo}/AssetsPVA";
             }
+            else if (nombreTipo == "ComputerrorDLM")
+            {
+                carpetaAssets = $"AssetsComputerrorDLM";
+            }
             else
             {
                 carpetaAssets = $"Pokemons/{nombreTipo}/Assets{nombreTipo}";

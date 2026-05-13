@@ -111,9 +111,9 @@ namespace ProyectoVacioUWP_Base
                 Spacing = 10
             };
 
-            TextBlock titulo = new TextBlock
+                TextBlock titulo = new TextBlock    
             {
-                Text = pokemon.Nombre,
+                Text = pokemon.Nombre ?? "Desconocido", // Manejo del nulo
                 FontSize = 28,
                 FontWeight = Windows.UI.Text.FontWeights.Bold,
                 Foreground = new SolidColorBrush(Colors.White),
@@ -130,7 +130,7 @@ namespace ProyectoVacioUWP_Base
 
             TextBlock descripcion = new TextBlock
             {
-                Text = pokemon.Descripcion,
+                Text = pokemon.Descripcion ?? "Sin descripción", // Manejo del nulo
                 FontSize = 15,
                 Foreground = new SolidColorBrush(Color.FromArgb(235, 255, 255, 255)),
                 TextWrapping = TextWrapping.WrapWholeWords,
@@ -139,7 +139,7 @@ namespace ProyectoVacioUWP_Base
 
             TextBlock tipos = new TextBlock
             {
-                Text = $"Tipo: {pokemon.Tipo}",
+                Text = $"Tipo: {pokemon.Tipo ?? "Desconocido"}", // Manejo del nulo
                 FontSize = 14,
                 Foreground = new SolidColorBrush(Color.FromArgb(220, 220, 240, 255)),
                 TextWrapping = TextWrapping.WrapWholeWords
