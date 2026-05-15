@@ -105,6 +105,8 @@
               SelectionMode="None"
               IsTabStop="False"
               ItemClick="gvPokemons_ItemClick"
+              CanDragItems="True"
+              DragItemsStarting="gvPokemons_DragItemsStarting"
               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
               ScrollViewer.VerticalScrollBarVisibility="Auto"
               HorizontalAlignment="Stretch"
@@ -167,7 +169,10 @@
                 BorderBrush="Black"
                 BorderThickness="3"
                 Background="White">
-            <Grid x:Name="contenedorP1">
+            <Grid x:Name="contenedorP1"
+                           AllowDrop="True"
+                           DragOver="Contenedor_DragOver"
+                           Drop="ContenedorP1_Drop">
                 <TextBlock x:Name="txtCajaP1"
                            Text="Pokémon del Player 1"
                            TextWrapping="Wrap"
@@ -214,7 +219,10 @@
                 BorderBrush="Black"
                 BorderThickness="3"
                 Background="White">
-            <Grid x:Name="contenedorP2">
+            <Grid x:Name="contenedorP2"
+                           AllowDrop="True"
+                           DragOver="Contenedor_DragOver"
+                           Drop="ContenedorP2_Drop">
                 <TextBlock x:Name="txtCajaP2"
                            Text="Pokémon del Player 2"
                            TextWrapping="Wrap"
