@@ -156,5 +156,73 @@ namespace ProyectoVacioUWP_Base
 
             FadeNegroStoryboard.Begin();
         }
+
+        private void gvPokemons_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+        {
+            if (e.Items.Count > 0)
+            {
+                PokemonSeleccionItem item = e.Items[0] as PokemonSeleccionItem;
+
+                if (item != null)
+                {
+                    e.Data.SetText(item.PokemonReal.Nombre);
+                }
+            }
+        }
+
+        private void Contenedor_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+        }
+
+        private async void ContenedorP1_Drop(object sender, DragEventArgs e)
+        {
+            string nombrePokemon = await e.DataView.GetTextAsync();
+
+            iPokemon pokemon = BuscarPokemonPorNombre(nombrePokemon);
+
+            if (pokemon != null)
+            {
+                pokemonSeleccionadoP1 = pokemon;
+
+                MostrarPokemonEnCaja(contenedorP1, pokemon, true);
+
+                turnoSeleccion = 2;
+                ActualizarIndicadoresTurno();
+            }
+        }
+
+        private async void ContenedorP2_Drop(object sender, DragEventArgs e)
+        {
+            string nombrePokemon = await e.DataView.GetTextAsync();
+
+            iPokemon pokemon = BuscarPokemonPorNombre(nombrePokemon);
+
+            if (pokemon != null)
+            {
+                pokemonSeleccionadoP2 = pokemon;
+
+                MostrarPokemonEnCaja(contenedorP2, pokemon, false);
+
+                turnoSeleccion = 0;
+                ActualizarIndicadoresTurno();
+
+                ActivarBotonVersus();
+            }
+        }
+
+        private iPokemon BuscarPokemonPorNombre(string nombre)
+        {
+            foreach (iPokemon pokemon in listaPokemons)
+            {
+                if (pokemon.Nombre == nombre)
+                {
+                    return pokemon;
+                }
+            }
+
+            return null;
+        }
+
     }
 }

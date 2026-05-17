@@ -4,22 +4,145 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid>
-        <!-- Al poner la imagen primero en el Grid, se renderiza al fondo (detrás del texto) -->
-        <Image Source="/Assets/Bola_invoca_pokemons.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Page.Resources>
 
-        <!-- Contenedor con fondo semitransparente para el título -->
-        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,281,0,0" Background="#B3000000" CornerRadius="10" Padding="20,10">
-            <TextBlock Text="Bienvenido al Sistema de Combates de Pokemons" FontSize="35" Foreground="White" FontWeight="Bold" />
-        </Border>
+        <!-- Fondo azul -->
 
+        <LinearGradientBrush x:Key="FondoHomeBrush"
+                             StartPoint="0,0"
+                             EndPoint="1,1">
+
+            <GradientStop Color="#FF0F172A" Offset="0"/>
+            <GradientStop Color="#FF1E3A5F" Offset="0.55"/>
+            <GradientStop Color="#FF2563EB" Offset="1"/>
+
+        </LinearGradientBrush>
+
+        <!-- Animación Pokéball -->
+
+        <Storyboard x:Name="RotacionPokeball"
+                    RepeatBehavior="Forever">
+
+            <DoubleAnimation
+                Storyboard.TargetName="rotatePokeball"
+                Storyboard.TargetProperty="Angle"
+                From="0"
+                To="360"
+                Duration="0:0:12"/>
+
+        </Storyboard>
+
+        <!-- Animación flotante -->
+
+        <Storyboard x:Name="FlotarPokeball"
+                    RepeatBehavior="Forever"
+                    AutoReverse="True">
+
+            <DoubleAnimation
+                Storyboard.TargetName="translatePokeball"
+                Storyboard.TargetProperty="Y"
+                From="-8"
+                To="8"
+                Duration="0:0:2"/>
+
+        </Storyboard>
+
+    </Page.Resources>
+
+    <Grid Background="{StaticResource FondoHomeBrush}">
+
+        <!-- Fondo oscuro suave -->
+
+        <Rectangle Fill="#22000000"/>
+
+        <!-- Pokeball -->
+
+        <Image Source="/Assets/Bola_invoca_pokemons.png"
+               Width="700"
+               Opacity="0.92"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Stretch="Uniform"
+               Margin="0,40,0,0"
+               RenderTransformOrigin="0.5,0.5"
+               Loaded="Pokeball_Loaded">
+
+            <Image.RenderTransform>
+
+                <TransformGroup>
+
+                    <RotateTransform x:Name="rotatePokeball"/>
+                    <TranslateTransform x:Name="translatePokeball"/>
+
+                </TransformGroup>
+
+            </Image.RenderTransform>
+
+        </Image>
+
+        <!-- CONTENIDO -->
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Spacing="28"
+                    Margin="40">
+
+            <!-- Título -->
+
+            <Border Background="Transparent"
+                    BorderBrush="#99C9FF"
+                    BorderThickness="1"
+                    CornerRadius="28"
+                    Padding="36,22" Height="255">
+
+                <StackPanel Spacing="12">
+
+                    <TextBlock Text="Bienvenido a la aplicación interactiva IPOkemon"
+                               FontSize="46"
+                               FontWeight="Black"
+                               Foreground="White"
+                               TextAlignment="Center"
+                               />
+
+                    <TextBlock Text="Explora · Combate · Colecciona"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="#1E3A8A"
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+            <Border Background="Transparent"
+                    BorderBrush="#99C9FF"
+                    BorderThickness="1"
+                    CornerRadius="20"
+                    Padding="18" Height="118">
+
+                <TextBlock
+                    Text="Selecciona una opción en el menú lateral para comenzar tu aventura."
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    Foreground="Black"
+                    TextAlignment="Center" Height="37" Width="731" Margin="0,14,0,30"/>
+
+            </Border>
+
+            <!-- Caja inferior -->
+
+        </StackPanel>
+
+<<<<<<< HEAD
         <!-- Contenedor con fondo semitransparente para el subtítulo -->
         <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,644,0,0" Background="#B3000000" CornerRadius="10" Padding="20,10">
             <TextBlock Text="Selecciona una opción en el menú lateral para comenzar a explorar." FontSize="28" Foreground="White" FontWeight="SemiBold"/>
         </Border>
         <ComboBox x:Name="Cambiar_Idioma" Height="102" Margin="1250,10,0,0" Width="170"/>
+=======
+>>>>>>> feature-belen
     </Grid>
+
 </Page>

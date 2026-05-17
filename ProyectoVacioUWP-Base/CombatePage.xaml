@@ -4,59 +4,94 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="#FFF7F7F7">
+    mc:Ignorable="d">
 
     <Page.Resources>
+
+        <!-- Fondo -->
+
+        <LinearGradientBrush x:Key="FondoCombateBrush"
+                             StartPoint="0,0"
+                             EndPoint="1,1">
+
+            <GradientStop Color="#FF0F172A" Offset="0"/>
+            <GradientStop Color="#FF1E3A5F" Offset="0.55"/>
+            <GradientStop Color="#FF2563EB" Offset="1"/>
+
+        </LinearGradientBrush>
+
+        <!-- Storyboards -->
+
         <Storyboard x:Name="FadeNegroStoryboard">
             <DoubleAnimation
-            Storyboard.TargetName="overlayNegro"
-            Storyboard.TargetProperty="Opacity"
-            To="1"
-            Duration="0:0:1.2" />
+                Storyboard.TargetName="overlayNegro"
+                Storyboard.TargetProperty="Opacity"
+                To="1"
+                Duration="0:0:1.2"/>
         </Storyboard>
 
         <Storyboard x:Name="MostrarVsStoryboard">
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="btnVersus"
-                                       Storyboard.TargetProperty="Visibility">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible"/>
+
+            <ObjectAnimationUsingKeyFrames
+                Storyboard.TargetName="btnVersus"
+                Storyboard.TargetProperty="Visibility">
+
+                <DiscreteObjectKeyFrame
+                    KeyTime="0:0:0"
+                    Value="Visible"/>
+
             </ObjectAnimationUsingKeyFrames>
 
-            <DoubleAnimation Storyboard.TargetName="btnVersus"
-                         Storyboard.TargetProperty="Opacity"
-                         From="0"
-                         To="1"
-                         Duration="0:0:0.6"/>
+            <DoubleAnimation
+                Storyboard.TargetName="btnVersus"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.6"/>
 
-            <DoubleAnimation Storyboard.TargetName="scaleVs"
-                         Storyboard.TargetProperty="ScaleX"
-                         From="0.7"
-                         To="1"
-                         Duration="0:0:0.6"/>
+            <DoubleAnimation
+                Storyboard.TargetName="scaleVs"
+                Storyboard.TargetProperty="ScaleX"
+                From="0.7"
+                To="1"
+                Duration="0:0:0.6"/>
 
-            <DoubleAnimation Storyboard.TargetName="scaleVs"
-                         Storyboard.TargetProperty="ScaleY"
-                         From="0.7"
-                         To="1"
-                         Duration="0:0:0.6"/>
+            <DoubleAnimation
+                Storyboard.TargetName="scaleVs"
+                Storyboard.TargetProperty="ScaleY"
+                From="0.7"
+                To="1"
+                Duration="0:0:0.6"/>
+
         </Storyboard>
 
-        <Storyboard x:Name="RespiracionVsStoryboard" RepeatBehavior="Forever" AutoReverse="True">
-            <DoubleAnimation Storyboard.TargetName="scaleVs"
-                         Storyboard.TargetProperty="ScaleX"
-                         From="1"
-                         To="1.08"
-                         Duration="0:0:0.9"/>
-            <DoubleAnimation Storyboard.TargetName="scaleVs"
-                         Storyboard.TargetProperty="ScaleY"
-                         From="1"
-                         To="1.08"
-                         Duration="0:0:0.9"/>
+        <Storyboard x:Name="RespiracionVsStoryboard"
+                    RepeatBehavior="Forever"
+                    AutoReverse="True">
+
+            <DoubleAnimation
+                Storyboard.TargetName="scaleVs"
+                Storyboard.TargetProperty="ScaleX"
+                From="1"
+                To="1.08"
+                Duration="0:0:0.9"/>
+
+            <DoubleAnimation
+                Storyboard.TargetName="scaleVs"
+                Storyboard.TargetProperty="ScaleY"
+                From="1"
+                To="1.08"
+                Duration="0:0:0.9"/>
+
         </Storyboard>
+
     </Page.Resources>
-    
-    
-    <Grid x:Name="rootGrid">
+
+    <!-- ROOT -->
+
+    <Grid x:Name="rootGrid"
+          Background="{StaticResource FondoCombateBrush}">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -69,92 +104,117 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Indicadores superiores -->
+        <!-- P1 -->
+
         <TextBlock x:Name="txtTurnoP1"
-           Grid.Row="0"
-           Grid.Column="0"
-           Text="P1"
-           FontSize="110"
-           FontWeight="Black"
-           Foreground="Black"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Center"
-           Margin="0,18,0,10"
-           RenderTransformOrigin="0.5,0.5">
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Text="P1"
+                   FontSize="110"
+                   FontWeight="Black"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0,18,0,10"
+                   RenderTransformOrigin="0.5,0.5">
+
             <TextBlock.RenderTransform>
-                <ScaleTransform x:Name="scaleP1" ScaleX="1" ScaleY="1"/>
+                <ScaleTransform x:Name="scaleP1"
+                                ScaleX="1"
+                                ScaleY="1"/>
             </TextBlock.RenderTransform>
+
         </TextBlock>
 
+        <!-- GRID POKEMON -->
 
         <Border Grid.Row="0"
-        Grid.Column="1"
-        Margin="20,20,20,10"
-        Padding="14"
-        CornerRadius="35"
-        BorderBrush="Black"
-        BorderThickness="3"
-        Background="White"
-        MinHeight="300"
-        MaxWidth="580"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch">
+                Grid.Column="1"
+                Margin="20,20,20,10"
+                Padding="14"
+                CornerRadius="35"
+                BorderBrush="#55FFFFFF"
+                BorderThickness="2"
+                Background="#22FFFFFF"
+                MinHeight="300"
+                MaxWidth="580"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
 
             <GridView x:Name="gvPokemons"
-              IsItemClickEnabled="True"
-              SelectionMode="None"
-              IsTabStop="False"
-              ItemClick="gvPokemons_ItemClick"
-              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-              ScrollViewer.VerticalScrollBarVisibility="Auto"
-              HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch">
+                      IsItemClickEnabled="True"
+                      SelectionMode="None"
+                      IsTabStop="False"
+                      ItemClick="gvPokemons_ItemClick"
+                      CanDragItems="True"
+                      DragItemsStarting="gvPokemons_DragItemsStarting"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+
                 <GridView.ItemsPanel>
+
                     <ItemsPanelTemplate>
                         <ItemsWrapGrid Orientation="Horizontal"
-                               MaximumRowsOrColumns="4"/>
+                                       MaximumRowsOrColumns="4"/>
                     </ItemsPanelTemplate>
+
                 </GridView.ItemsPanel>
 
                 <GridView.ItemTemplate>
+
                     <DataTemplate>
+
                         <Border Width="90"
-                Height="75"
-                Margin="6"
-                Padding="4"
-                Background="#FFF2F2F2"
-                BorderBrush="#FFB0B0B0"
-                BorderThickness="1"
-                CornerRadius="14"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                                Height="75"
+                                Margin="6"
+                                Padding="4"
+                                Background="#18FFFFFF"
+                                BorderBrush="#44FFFFFF"
+                                BorderThickness="1"
+                                CornerRadius="14"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+
                             <ContentPresenter Content="{Binding VistaCompacta}"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"/>
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+
                         </Border>
+
                     </DataTemplate>
+
                 </GridView.ItemTemplate>
+
             </GridView>
+
         </Border>
-        
-        
+
+        <!-- P2 -->
+
         <TextBlock x:Name="txtTurnoP2"
-           Grid.Row="0"
-           Grid.Column="2"
-           Text="P2"
-           FontSize="110"
-           FontWeight="Black"
-           Foreground="Black"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Center"
-           Margin="0,18,0,10"
-           RenderTransformOrigin="0.5,0.5">
+                   Grid.Row="0"
+                   Grid.Column="2"
+                   Text="P2"
+                   FontSize="110"
+                   FontWeight="Black"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0,18,0,10"
+                   RenderTransformOrigin="0.5,0.5">
+
             <TextBlock.RenderTransform>
-                <ScaleTransform x:Name="scaleP2" ScaleX="1" ScaleY="1"/>
+                <ScaleTransform x:Name="scaleP2"
+                                ScaleX="1"
+                                ScaleY="1"/>
             </TextBlock.RenderTransform>
+
         </TextBlock>
 
-        <!-- Zona inferior -->
+        <!-- CAJA P1 -->
+
         <Border Grid.Row="2"
                 Grid.Column="0"
                 Margin="40,20,20,30"
@@ -164,44 +224,59 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 CornerRadius="30"
-                BorderBrush="Black"
-                BorderThickness="3"
-                Background="White">
-            <Grid x:Name="contenedorP1">
+                BorderBrush="#55FFFFFF"
+                BorderThickness="2"
+                Background="#22FFFFFF">
+
+            <Grid x:Name="contenedorP1"
+                  AllowDrop="True"
+                  DragOver="Contenedor_DragOver"
+                  Drop="ContenedorP1_Drop">
+
                 <TextBlock x:Name="txtCajaP1"
                            Text="Pokémon del Player 1"
                            TextWrapping="Wrap"
                            FontSize="34"
                            FontWeight="SemiBold"
+                           Foreground="White"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            TextAlignment="Center"/>
+
             </Grid>
+
         </Border>
 
+        <!-- BOTON VS -->
+
         <Button x:Name="btnVersus"
-        Grid.Row="2"
-        Grid.Column="1"
-        Width="290"
-        Height="210"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Background="Transparent"
-        BorderThickness="0"
-        IsEnabled="False"
-        Visibility="Collapsed"
-        Opacity="0"
-        Click="btnVersus_Click"
-        RenderTransformOrigin="0.5,0.5">
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="290"
+                Height="210"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                BorderThickness="0"
+                IsEnabled="False"
+                Visibility="Collapsed"
+                Opacity="0"
+                Click="btnVersus_Click"
+                RenderTransformOrigin="0.5,0.5">
+
             <Button.RenderTransform>
-                <ScaleTransform x:Name="scaleVs" ScaleX="1" ScaleY="1"/>
+                <ScaleTransform x:Name="scaleVs"
+                                ScaleX="1"
+                                ScaleY="1"/>
             </Button.RenderTransform>
 
             <Image Source="ms-appx:///Assets/versusimage.png"
-           Stretch="Uniform"/>
+                   Stretch="Uniform"/>
+
         </Button>
-        
-        
+
+        <!-- CAJA P2 -->
+
         <Border Grid.Row="2"
                 Grid.Column="2"
                 Margin="20,20,40,30"
@@ -211,22 +286,31 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 CornerRadius="30"
-                BorderBrush="Black"
-                BorderThickness="3"
-                Background="White">
-            <Grid x:Name="contenedorP2">
+                BorderBrush="#55FFFFFF"
+                BorderThickness="2"
+                Background="#22FFFFFF">
+
+            <Grid x:Name="contenedorP2"
+                  AllowDrop="True"
+                  DragOver="Contenedor_DragOver"
+                  Drop="ContenedorP2_Drop">
+
                 <TextBlock x:Name="txtCajaP2"
                            Text="Pokémon del Player 2"
                            TextWrapping="Wrap"
                            FontSize="34"
                            FontWeight="SemiBold"
+                           Foreground="White"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            TextAlignment="Center"/>
+
             </Grid>
+
         </Border>
 
-        <!-- Capa de negro para transición -->
+        <!-- OVERLAY -->
+
         <Grid x:Name="overlayNegro"
               Background="Black"
               Opacity="0"
@@ -234,5 +318,7 @@
               Grid.RowSpan="3"
               Grid.ColumnSpan="3"
               IsHitTestVisible="False"/>
+
     </Grid>
+
 </Page>

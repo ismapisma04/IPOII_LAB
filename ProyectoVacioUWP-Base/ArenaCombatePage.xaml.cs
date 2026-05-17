@@ -5,6 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace ProyectoVacioUWP_Base
 {
@@ -188,6 +189,11 @@ namespace ProyectoVacioUWP_Base
             txtFinCombate.Visibility = Visibility.Visible;
 
             DesactivarBotonesAccion();
+
+            new ToastContentBuilder()
+                .AddText($"🏆 {ganador} ha ganado el combate")
+                .AddText("Consulta el resultado en IPOkemon")
+                .Show();
         }
 
         private void DesactivarBotonesAccion()
