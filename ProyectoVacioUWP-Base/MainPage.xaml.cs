@@ -62,6 +62,7 @@ namespace ProyectoVacioUWP_Base
             btnPokedex.Background = fondoNormal;
             btnCombate.Background = fondoNormal;
             btnAcercaDe.Background = fondoNormal;
+            btnConfiguracion.Background = fondoNormal;
         }
 
         private void marcarSeleccionado(Button boton)
@@ -98,6 +99,19 @@ namespace ProyectoVacioUWP_Base
         {
             fmMain.Navigate(typeof(AcercaDePage));
             marcarSeleccionado(btnAcercaDe);
+        }
+
+        private void irConfiguracion(object sender, RoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(paginaConfiguracion));
+            marcarSeleccionado(btnConfiguracion);
+        }
+
+        public void MostrarConfiguracion()
+        {
+            // Navegación forzada a config
+            fmMain.Navigate(typeof(paginaConfiguracion));
+            marcarSeleccionado(btnConfiguracion);
         }
     }
 }

@@ -46,12 +46,12 @@
 
                 <StackPanel Spacing="6">
 
-                    <TextBlock Text="Mis Pokémon"
+                    <TextBlock x:Uid="MisPokemonTitulo"
                                FontSize="36"
                                FontWeight="Bold"
                                Foreground="White"/>
 
-                    <TextBlock Text="Tu colección personal de Pokémon disponibles para combate."
+                    <TextBlock x:Uid="MisPokemonSubtitulo"
                                FontSize="16"
                                Foreground="#D6E4FF"
                                TextWrapping="Wrap"/>

@@ -47,7 +47,16 @@ namespace ProyectoVacioUWP_Base
         public double Altura { get => _altura; set => _altura = value; }
         public double Peso { get => _peso; set => _peso = value; }
         public string Evolucion { get => _evolucion; set => _evolucion = value; }
-        public string Descripcion { get => _descripcion; set => _descripcion = value; }
+        public string Descripcion
+        {
+            get
+            {
+                var loader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                string val = loader.GetString("DescRotom/Text");
+                return string.IsNullOrEmpty(val) ? _descripcion : val;
+            }
+            set => _descripcion = value;
+        }
 
 
    

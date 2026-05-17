@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>  
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="TxtTituloApp.Text" xml:space="preserve">
+        <value>Bienvenido a la aplicación interactiva IPOkemon</value>
+    </data>
+    <data name="TxtSubtitulo.Text" xml:space="preserve">
+        <value>Explora · Combate · Colecciona</value>
+    </data>
+    <data name="TxtAventura.Text" xml:space="preserve">
+        <value>Selecciona una opción en el menú lateral para comenzar tu aventura.</value>
+    </data>
+    <data name="TxtExplorar.Text" xml:space="preserve">
+        <value>Selecciona una opción en el menú lateral para comenzar a explorar.</value>
+    </data>
+    <data name="Cambiar_Idioma.PlaceholderText" xml:space="preserve">
+        <value>Seleccione el idioma</value>
+    </data>
+    <data name="OpcionEspanol.Content" xml:space="preserve">
+        <value>Español</value>
+    </data>
+    <data name="OpcionIngles.Content" xml:space="preserve">
+        <value>Inglés</value>
+    </data>
+    <data name="NavInicio.Text" xml:space="preserve">
+        <value>Inicio</value>
+    </data>
+    <data name="NavMisPokemon.Text" xml:space="preserve">
+        <value>Mis Pokémon</value>
+    </data>
+    <data name="NavPokedex.Text" xml:space="preserve">
+        <value>Pokédex</value>
+    </data>
+    <data name="NavCombate.Text" xml:space="preserve">
+        <value>Combate</value>
+    </data>
+    <data name="NavAcercaDe.Text" xml:space="preserve">
+        <value>Acerca de</value>
+    </data>
+    <data name="NavConfiguracion.Text" xml:space="preserve">
+        <value>Configuración</value>
+    </data>
+    <data name="MisPokemonTitulo.Text" xml:space="preserve">
+        <value>Mis Pokémon</value>
+    </data>
+    <data name="MisPokemonSubtitulo.Text" xml:space="preserve">
+        <value>Tu colección personal de Pokémon disponibles para combate.</value>
+    </data>
+    <data name="PokedexTitulo.Text" xml:space="preserve">
+        <value>Pokémon disponibles</value>
+    </data>
+    <data name="PokedexSubtitulo.Text" xml:space="preserve">
+        <value>Pulsa sobre cualquier tarjeta para abrir la información detallada.</value>
+    </data>
+    <data name="PokedexListaTitulo.Text" xml:space="preserve">
+        <value>Lista de la Pokédex</value>
+    </data>
+    <data name="PokedexListaSubtitulo.Text" xml:space="preserve">
+        <value>Busca por nombre o descripción y filtra por hasta dos tipos.</value>
+    </data>
+    <data name="TxtBusqueda.PlaceholderText" xml:space="preserve">
+        <value>Buscar Pokémon...</value>
+    </data>
+    <data name="CbTipo1.Header" xml:space="preserve">
+        <value>Tipo 1</value>
+    </data>
+    <data name="CbTipo1.PlaceholderText" xml:space="preserve">
+        <value>Selecciona un tipo</value>
+    </data>
+    <data name="CbTipo2.Header" xml:space="preserve">
+        <value>Tipo 2</value>
+    </data>
+    <data name="CbTipo2.PlaceholderText" xml:space="preserve">
+        <value>Selecciona un tipo</value>
+    </data>
+    <data name="BtnLimpiar.Content" xml:space="preserve">
+        <value>Limpiar</value>
+    </data>
+    <data name="TxtResultados.Text" xml:space="preserve">
+        <value>Mostrando todos los Pokémon</value>
+    </data>
+    <data name="AcercaDeTitulo.Text" xml:space="preserve">
+        <value>Acerca del Proyecto</value>
+    </data>
+    <data name="AcercaDeSubtitulo.Text" xml:space="preserve">
+        <value>Aplicacion Pokemon desarrollada en UWP</value>
+    </data>
+    <data name="AcercaDeDescTitulo.Text" xml:space="preserve">
+        <value>Descripcion</value>
+    </data>
+    <data name="AcercaDeDescTexto.Text" xml:space="preserve">
+        <value>Este proyecto ha sido desarrollado como una aplicacion interactiva inspirada en el universo Pokemon. Incluye una Pokedex visual, seleccion de Pokemon, sistema de combate por turnos y animaciones personalizadas.</value>
+    </data>
+    <data name="AcercaDeDescTexto2.Text" xml:space="preserve">
+        <value>Toda la interfaz ha sido disenada siguiendo una estetica moderna basada en tarjetas translucidas, degradados azules y una experiencia visual dinamica.</value>
+    </data>
+    <data name="AcercaDeParticipantes.Text" xml:space="preserve">
+        <value>Participantes</value>
+    </data>
+    <data name="AcercaDeProyecto.Text" xml:space="preserve">
+        <value>Proyecto Pokemon UWP</value>
+    </data>
+    <data name="AcercaDeCurso.Text" xml:space="preserve">
+        <value>Curso 2025-26</value>
+    </data>
+    <data name="AcercaDeConfiguracion.Text" xml:space="preserve">
+        <value>CONFIGURACIÓN</value>
+    </data>
+    <data name="SobreConfiguracion.Text" xml:space="preserve">
+        <value>Ajusta tus necesidades a nuestra aplicación sobre combates Pokemon</value>
+    </data>
+    <data name="PerfilDeUsuario.Text" xml:space="preserve">
+        <value>Perfil del Usuario</value>
+    </data>
+    <data name="AcercaDeIdioma.Text" xml:space="preserve">
+        <value>Idioma de la aplicación</value>
+    </data>
+    <data name="GestionDeNotificaciones.Text" xml:space="preserve">
+        <value>Gestión de notificaciones</value>
+    </data>
+    <data name="DescEmpoleon.Text" xml:space="preserve">
+        <value>Empoleon nada tan rápido como una lancha. Sus alas cortan el hielo como cuchillas.</value>
+    </data>
+    <data name="DescSnorlax.Text" xml:space="preserve">
+        <value>Un Pokémon muy perezoso. Solo se despierta para comer.</value>
+    </data>
+    <data name="DescRotom.Text" xml:space="preserve">
+        <value>Su cuerpo está compuesto de plasma. Es conocido por infiltrarse en dispositivos electrónicos para causar todo tipo de travesuras.</value>
+    </data>
+    <data name="DescGengar.Text" xml:space="preserve">
+        <value>En las noches de luna llena, este Pokémon imita las sombras de la gente y se burla de sus miedos.</value>
+    </data>
+    <data name="DescBrasital.Text" xml:space="preserve">
+        <value>Brasita Frostito es un Pokémon de tipo Hielo y Dragón. Sus grandes alas membranosas le permiten volar a gran velocidad. Sus cuernos naranjas almacenan energía glacial que libera en forma de ventiscas. Sus enormes ojos azules pueden ver a través de las tormentas de nieve más densas.</value>
+    </data>
+</root>

@@ -32,12 +32,23 @@ namespace ProyectoUWPenBlanco
         public double Altura      { get; set; } = 0.6;
         public double Peso        { get; set; } = 12.0;
         public string Evolucion   { get; set; } = "Brasita → Frostivern";
-        public string Descripcion { get; set; } =
-            "Brasita Frostito es un Pokémon de tipo Hielo y Dragón. Sus " +
+
+        private string _descripcion = "Brasita Frostito es un Pokémon de tipo Hielo y Dragón. Sus " +
             "grandes alas membranosas le permiten volar a gran velocidad. " +
             "Sus cuernos naranjas almacenan energía glacial que libera en " +
             "forma de ventiscas. Sus enormes ojos azules pueden ver a través " +
             "de las tormentas de nieve más densas.";
+
+        public string Descripcion 
+        {
+            get
+            {
+                var loader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                string val = loader.GetString("DescBrasital/Text");
+                return string.IsNullOrEmpty(val) ? _descripcion : val;
+            }
+            set => _descripcion = value; 
+        }
 
         public BrasitalEHA()
         {

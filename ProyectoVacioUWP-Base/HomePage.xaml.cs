@@ -14,7 +14,7 @@ namespace ProyectoVacioUWP_Base
 
         private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-
+        }
 
         private void Pokeball_Loaded(object sender, RoutedEventArgs e)
         {

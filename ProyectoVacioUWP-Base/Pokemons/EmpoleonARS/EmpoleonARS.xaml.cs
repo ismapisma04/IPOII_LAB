@@ -96,7 +96,16 @@ namespace ProyectoVacioUWP_Base
         public double Altura { get => altura; set => altura = value; }
         public double Peso { get => peso; set => peso = value; }
         public string Evolucion { get => evolucion; set => evolucion = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string Descripcion
+        {
+            get
+            {
+                var loader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                string val = loader.GetString("DescEmpoleon/Text");
+                return string.IsNullOrEmpty(val) ? descripcion : val;
+            }
+            set => descripcion = value;
+        }
 
         // ... (Métodos visuales, ej verFilaVida, etc) 
         public void verFondo(bool ver) { if (image != null) image.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }

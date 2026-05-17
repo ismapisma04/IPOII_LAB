@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
+    
 
     <Page.Resources>
 
@@ -55,7 +57,7 @@
 
         <!-- Fondo oscuro suave -->
 
-        <Rectangle Fill="#22000000"/>
+        <Rectangle Fill="#22000000" HorizontalAlignment="Left" Width="1500"/>
 
         <!-- Pokeball -->
 
@@ -99,14 +101,16 @@
 
                 <StackPanel Spacing="12">
 
-                    <TextBlock Text="Bienvenido a la aplicación interactiva IPOkemon"
+                    <TextBlock x:Name="TxtTituloApp"
+                               x:Uid="TxtTituloApp"
                                FontSize="46"
                                FontWeight="Black"
                                Foreground="White"
                                TextAlignment="Center"
                                />
 
-                    <TextBlock Text="Explora · Combate · Colecciona"
+                    <TextBlock x:Name="TxtSubtitulo"
+                               x:Uid="TxtSubtitulo"
                                FontSize="22"
                                FontWeight="SemiBold"
                                Foreground="#1E3A8A"
@@ -122,8 +126,8 @@
                     CornerRadius="20"
                     Padding="18" Height="118">
 
-                <TextBlock
-                    Text="Selecciona una opción en el menú lateral para comenzar tu aventura."
+                <TextBlock x:Name="TxtAventura"
+                           x:Uid="TxtAventura"
                     FontSize="20"
                     FontWeight="SemiBold"
                     Foreground="Black"
@@ -138,9 +142,9 @@
 
         <!-- Contenedor con fondo semitransparente para el subtítulo -->
         <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,644,0,0" Background="#B3000000" CornerRadius="10" Padding="20,10">
-            <TextBlock Text="Selecciona una opción en el menú lateral para comenzar a explorar." FontSize="28" Foreground="White" FontWeight="SemiBold"/>
+            <TextBlock x:Name="TxtExplorar"
+                       x:Uid="TxtExplorar" FontSize="28" Foreground="White" FontWeight="SemiBold"/>
         </Border>
-        <ComboBox x:Name="Cambiar_Idioma" Height="102" Margin="1250,10,0,0" Width="170"/>
 
     </Grid>
 

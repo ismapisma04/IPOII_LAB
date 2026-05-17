@@ -38,7 +38,16 @@ namespace ProyectoVacioUWP_Base
         public double Altura { get => 1.5; set {} }
         public double Peso { get => 40.5; set {} }
         public string Evolucion { get => "Gastly -> Haunter -> Gengar"; set {} }
-        public string Descripcion { get => "En las noches de luna llena, este Pokémon imita las sombras de la gente y se burla de sus miedos."; set {} }
+        public string Descripcion
+        {
+            get
+            {
+                var loader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                string val = loader.GetString("DescGengar/Text");
+                return string.IsNullOrEmpty(val) ? "En las noches de luna llena, este Pokémon imita las sombras de la gente y se burla de sus miedos." : val;
+            }
+            set {}
+        }
 
         //Sonidos
         MediaPlayer mpCansado = new MediaPlayer();

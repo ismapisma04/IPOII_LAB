@@ -1,5 +1,5 @@
 <Page
-    x:Class="ProyectoVacioUWP_Base.AcercaDePage"
+    x:Class="ProyectoVacioUWP_Base.paginaConfiguracion"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -40,13 +40,16 @@
 
                     <StackPanel Spacing="10">
 
-                        <TextBlock x:Uid="AcercaDeTitulo"
+                        <TextBlock x:Uid="AcercaDeConfiguracion"
+                                   Text="CONFIGURACIÓN"
                                    FontSize="42"
                                    FontWeight="Bold"
                                    Foreground="White"
                                    HorizontalAlignment="Center"/>
 
-                        <TextBlock x:Uid="AcercaDeSubtitulo"
+
+                        <TextBlock x:Uid="SobreConfiguracion"
+                                   Text="Ajusta tus necesidades a nuestra aplicación sobre combates Pokemon"
                                    FontSize="18"
                                    Foreground="#DDEAFBFF"
                                    HorizontalAlignment="Center"/>
@@ -65,26 +68,42 @@
 
                     <StackPanel Spacing="18">
 
-                        <TextBlock x:Uid="AcercaDeDescTitulo"
+                        <TextBlock x:Uid="PerfilDeUsuario"
+                                   Text="Perfil del Usuario"
                                    FontSize="30"
                                    FontWeight="SemiBold"
                                    Foreground="White"/>
-
                         <TextBlock
-                            x:Uid="AcercaDeDescTexto"
+                            x:Uid="AcercaDeIdioma"
+                            Text="idioma de la aplicación"
                             TextWrapping="WrapWholeWords"
                             FontSize="18"
                             Foreground="#E6FFFFFF"
                             LineHeight="30"/>
 
+                        <ComboBox x:Name="Cambiar_Idioma" x:Uid="Cambiar_Idioma" Width="170" 
+                                  Loaded="Cambiar_Idioma_Loaded" SelectionChanged="Cambiar_Idioma_SelectionChanged">
+                            <ComboBoxItem x:Uid="OpcionEspanol" Content="Español" Tag="es"/>
+                            <ComboBoxItem x:Uid="OpcionIngles" Content="Inglés" Tag="en"/>
+                        </ComboBox>
+
                         <TextBlock
-                            x:Uid="AcercaDeDescTexto2"
+                            x:Uid="GestionDeNotificaciones"
+                            Text="Gestión de notificaciones"
                             TextWrapping="WrapWholeWords"
                             FontSize="18"
                             Foreground="#E6FFFFFF"
                             LineHeight="30"/>
+
+                        <ComboBox x:Name="Gestion_Notificaciones" x:Uid="Gestion_Notificaciones" Width="170" 
+                                  Loaded="Gestion_Notificaciones_Loaded" SelectionChanged="Gestion_Notificaciones_SelectionChanged">
+                            <ComboBoxItem x:Uid="OpcionNotificacionesOn" Content="Activadas" Tag="On"/>
+                            <ComboBoxItem x:Uid="OpcionNotificacionesOff" Content="Desactivadas" Tag="Off"/>
+                        </ComboBox>
+
 
                     </StackPanel>
+                        
 
                 </Border>
 

@@ -48,7 +48,7 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE80F;" FontFamily="Segoe MDL2 Assets"/>
-                        <TextBlock Text="Inicio"/>
+                        <TextBlock x:Uid="NavInicio"/>
                     </StackPanel>
                 </Button>
 
@@ -63,7 +63,7 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE14C;" FontFamily="Segoe MDL2 Assets"/>
-                        <TextBlock Text="Mis Pokemon"/>
+                        <TextBlock x:Uid="NavMisPokemon"/>
                     </StackPanel>
                 </Button>
 
@@ -78,7 +78,7 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE82D;" FontFamily="Segoe MDL2 Assets"/>
-                        <TextBlock Text="Pokedex"/>
+                        <TextBlock x:Uid="NavPokedex"/>
                     </StackPanel>
                 </Button>
 
@@ -93,7 +93,7 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE1D3;" FontFamily="Segoe MDL2 Assets"/>
-                        <TextBlock Text="Combate"/>
+                        <TextBlock x:Uid="NavCombate"/>
                     </StackPanel>
                 </Button>
 
@@ -108,13 +108,14 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE946;" FontFamily="Segoe MDL2 Assets"/>
-                        <TextBlock Text="Acerca De"/>
+                        <TextBlock x:Uid="NavAcercaDe"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
 
             <Button x:Name="btnConfiguracion"
                     Grid.Row="2"
+                    Click="irConfiguracion"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Foreground="White"
@@ -124,7 +125,7 @@
                     Margin="0,0,0,4">
                 <StackPanel Orientation="Horizontal" Spacing="12">
                     <FontIcon Glyph="&#xE713;" FontFamily="Segoe MDL2 Assets"/>
-                    <TextBlock Text="Configuración"/>
+                    <TextBlock x:Uid="NavConfiguracion"/>
                 </StackPanel>
             </Button>
         </Grid>

@@ -42,7 +42,16 @@ namespace ProyectoVacioUWP_Base
         public double Altura { get => 2.1; set { } }
         public double Peso { get => 460.0; set { } }
         public string Evolucion { get => "Ninguna"; set { } }
-        public string Descripcion { get => "Un Pokémon muy perezoso. Solo se despierta para comer."; set { } }
+        public string Descripcion
+        {
+            get
+            {
+                var loader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                string val = loader.GetString("DescSnorlax/Text");
+                return string.IsNullOrEmpty(val) ? "Un Pokémon muy perezoso. Solo se despierta para comer." : val;
+            }
+            set { }
+        }
 
         public void verFondo(bool ver) { }
         public void verFilaVida(bool ver) 

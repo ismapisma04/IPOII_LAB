@@ -32,13 +32,13 @@
 
             <StackPanel Spacing="6">
                 <TextBlock
-                    Text="Pokémon disponibles"
+                    x:Uid="PokedexTitulo"
                     FontSize="34"
                     FontWeight="Bold"
                     Foreground="White"/>
 
                 <TextBlock
-                    Text="Pulsa sobre cualquier tarjeta para abrir la información detallada."
+                    x:Uid="PokedexSubtitulo"
                     FontSize="15"
                     TextWrapping="WrapWholeWords"
                     Foreground="#E6FFFFFF"/>
@@ -64,13 +64,13 @@
 
                 <StackPanel Spacing="18">
                     <TextBlock
-                        Text="Lista de la Pokédex"
+                        x:Uid="PokedexListaTitulo"
                         FontSize="24"
                         FontWeight="SemiBold"
                         Foreground="White"/>
 
                     <TextBlock
-                        Text="Busca por nombre o descripción y filtra por hasta dos tipos."
+                        x:Uid="PokedexListaSubtitulo"
                         FontSize="14"
                         Foreground="#DDEAFBFF"
                         TextWrapping="WrapWholeWords"/>
@@ -92,7 +92,7 @@
                             Padding="14,10">
                             <TextBox
                                 x:Name="txtBusquedaPokemon"
-                                PlaceholderText="Buscar Pokémon..."
+                                x:Uid="TxtBusqueda"
                                 TextChanged="txtBusquedaPokemon_TextChanged"
                                 Background="Transparent"
                                 Foreground="White"
@@ -102,23 +102,21 @@
 
                         <ComboBox
                             x:Name="cbTipo1"
+                            x:Uid="CbTipo1"
                             Grid.Column="1"
-                            Header="Tipo 1"
                             SelectionChanged="Filtros_SelectionChanged"
-                            PlaceholderText="Selecciona un tipo"
                             MinWidth="160"/>
 
                         <ComboBox
                             x:Name="cbTipo2"
+                            x:Uid="CbTipo2"
                             Grid.Column="2"
-                            Header="Tipo 2"
                             SelectionChanged="Filtros_SelectionChanged"
-                            PlaceholderText="Selecciona un tipo"
                             MinWidth="160"/>
 
                         <Button
+                            x:Uid="BtnLimpiar"
                             Grid.Column="3"
-                            Content="Limpiar"
                             Click="btnLimpiarFiltros_Click"
                             VerticalAlignment="Bottom"
                             Margin="0,0,0,2"/>
@@ -126,7 +124,7 @@
 
                     <TextBlock
                         x:Name="txtResultados"
-                        Text="Mostrando todos los Pokémon"
+                        x:Uid="TxtResultados"
                         FontSize="14"
                         Foreground="#E6FFFFFF"/>
 
