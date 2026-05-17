@@ -135,14 +135,13 @@
 
         </StackPanel>
 
-<<<<<<< HEAD
+
         <!-- Contenedor con fondo semitransparente para el subtítulo -->
         <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,644,0,0" Background="#B3000000" CornerRadius="10" Padding="20,10">
             <TextBlock Text="Selecciona una opción en el menú lateral para comenzar a explorar." FontSize="28" Foreground="White" FontWeight="SemiBold"/>
         </Border>
         <ComboBox x:Name="Cambiar_Idioma" Height="102" Margin="1250,10,0,0" Width="170"/>
-=======
->>>>>>> feature-belen
+
     </Grid>
 
 </Page>

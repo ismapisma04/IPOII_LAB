@@ -11,11 +11,11 @@ namespace ProyectoVacioUWP_Base
             this.InitializeComponent();
         }
 
-<<<<<<< HEAD
+
         private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
 
-=======
+
         private void Pokeball_Loaded(object sender, RoutedEventArgs e)
         {
             Storyboard giro = new Storyboard();
@@ -34,7 +34,6 @@ namespace ProyectoVacioUWP_Base
             giro.Children.Add(animacion);
 
             giro.Begin();
->>>>>>> feature-belen
         }
     }
 }
