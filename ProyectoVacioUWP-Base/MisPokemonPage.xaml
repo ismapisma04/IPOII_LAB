@@ -5,6 +5,7 @@
     xmlns:local="using:ProyectoVacioUWP_Base"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< HEAD
     xmlns:local1="using:ProyectoUWPenBlanco"
     mc:Ignorable="d"
     Background="Transparent">
@@ -226,4 +227,13 @@
             </Grid>
         </Grid>
     </ScrollViewer>
+=======
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!-- Instance of the Empoleon UserControl -->
+        <local:EmpoleonARS HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
 </Page>

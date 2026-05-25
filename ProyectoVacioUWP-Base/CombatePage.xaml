@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< HEAD
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -321,4 +322,11 @@
 
     </Grid>
 
+=======
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <TextBlock Text="Combate" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
 </Page>

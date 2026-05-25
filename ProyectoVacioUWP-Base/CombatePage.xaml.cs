@@ -1,14 +1,19 @@
+<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+=======
+using Windows.UI.Xaml.Controls;
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
 
 namespace ProyectoVacioUWP_Base
 {
     public sealed partial class CombatePage : Page
     {
+<<<<<<< HEAD
         public class CombateParametros
         {
             public string NombrePokemonP1 { get; set; }
@@ -226,3 +231,11 @@ namespace ProyectoVacioUWP_Base
 
     }
 }
+=======
+        public CombatePage()
+        {
+            this.InitializeComponent();
+        }
+    }
+}
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167

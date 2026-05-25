@@ -48,7 +48,11 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE80F;" FontFamily="Segoe MDL2 Assets"/>
+<<<<<<< HEAD
                         <TextBlock x:Uid="NavInicio"/>
+=======
+                        <TextBlock Text="Inicio"/>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     </StackPanel>
                 </Button>
 
@@ -63,7 +67,11 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE14C;" FontFamily="Segoe MDL2 Assets"/>
+<<<<<<< HEAD
                         <TextBlock x:Uid="NavMisPokemon"/>
+=======
+                        <TextBlock Text="Mis Pokemon"/>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     </StackPanel>
                 </Button>
 
@@ -78,7 +86,11 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE82D;" FontFamily="Segoe MDL2 Assets"/>
+<<<<<<< HEAD
                         <TextBlock x:Uid="NavPokedex"/>
+=======
+                        <TextBlock Text="Pokedex"/>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     </StackPanel>
                 </Button>
 
@@ -93,7 +105,11 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE1D3;" FontFamily="Segoe MDL2 Assets"/>
+<<<<<<< HEAD
                         <TextBlock x:Uid="NavCombate"/>
+=======
+                        <TextBlock Text="Combate"/>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     </StackPanel>
                 </Button>
 
@@ -108,14 +124,21 @@
                         Margin="0,4,0,0">
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <FontIcon Glyph="&#xE946;" FontFamily="Segoe MDL2 Assets"/>
+<<<<<<< HEAD
                         <TextBlock x:Uid="NavAcercaDe"/>
+=======
+                        <TextBlock Text="Acerca De"/>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     </StackPanel>
                 </Button>
             </StackPanel>
 
             <Button x:Name="btnConfiguracion"
                     Grid.Row="2"
+<<<<<<< HEAD
                     Click="irConfiguracion"
+=======
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Foreground="White"
@@ -125,7 +148,11 @@
                     Margin="0,0,0,4">
                 <StackPanel Orientation="Horizontal" Spacing="12">
                     <FontIcon Glyph="&#xE713;" FontFamily="Segoe MDL2 Assets"/>
+<<<<<<< HEAD
                     <TextBlock x:Uid="NavConfiguracion"/>
+=======
+                    <TextBlock Text="Configuración"/>
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                 </StackPanel>
             </Button>
         </Grid>

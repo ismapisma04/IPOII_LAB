@@ -24,7 +24,24 @@ namespace ProyectoVacioUWP_Base
 
         private void CargarPokemons()
         {
+<<<<<<< HEAD
             listaPokemons = PokemonCatalogo.CrearPokemons();
+=======
+            listaPokemons.Clear();
+
+            Type[] tiposPokemon =
+            {
+                typeof(EmpoleonARS)
+            };
+
+            foreach (Type tipo in tiposPokemon)
+            {
+                if (Activator.CreateInstance(tipo) is iPokemon pokemon)
+                {
+                    listaPokemons.Add(pokemon);
+                }
+            }
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
         }
 
         private void CargarTiposDisponibles()
@@ -62,10 +79,16 @@ namespace ProyectoVacioUWP_Base
 
             foreach (iPokemon pokemon in pokemonsFiltrados)
             {
+<<<<<<< HEAD
                 if (PokemonFactory.CrearControlPokemon(pokemon) is UserControl control &&
                     control is iPokemon pokemonVisual)
                 {
                     PokemonFactory.PrepararParaPokedex(pokemonVisual, control);
+=======
+                if (CrearControlPokemon(pokemon) is UserControl control && control is iPokemon pokemonVisual)
+                {
+                    PrepararPokemonParaPokedex(pokemonVisual, control);
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
 
                     Border tarjeta = CrearTarjetaPokemon(control, pokemon);
                     spPokemons.Children.Add(tarjeta);
@@ -77,6 +100,50 @@ namespace ProyectoVacioUWP_Base
                 : $"Resultados encontrados: {pokemonsFiltrados.Count}";
         }
 
+<<<<<<< HEAD
+=======
+        private UserControl CrearControlPokemon(iPokemon pokemon)
+        {
+            if (pokemon is EmpoleonARS)
+            {
+                EmpoleonARS vista = new EmpoleonARS
+                {
+                    Nombre = pokemon.Nombre,
+                    Vida = pokemon.Vida,
+                    Energia = pokemon.Energia,
+                    Categoría = pokemon.Categoría,
+                    Tipo = pokemon.Tipo,
+                    Altura = pokemon.Altura,
+                    Peso = pokemon.Peso,
+                    Evolucion = pokemon.Evolucion,
+                    Descripcion = pokemon.Descripcion
+                };
+
+                return vista;
+            }
+
+            return null;
+        }
+
+        private void PrepararPokemonParaPokedex(iPokemon pokemon, UserControl control)
+        {
+            pokemon.verFondo(false);
+            pokemon.verFilaVida(false);
+            pokemon.verFilaEnergia(false);
+            pokemon.verPocionVida(false);
+            pokemon.verPocionEnergia(false);
+            pokemon.verNombre(false);
+            pokemon.verEscudo(false);
+            pokemon.activarAniIdle(true);
+
+            control.Width = 260;
+            control.Height = 180;
+            control.HorizontalAlignment = HorizontalAlignment.Left;
+            control.VerticalAlignment = VerticalAlignment.Center;
+            control.IsHitTestVisible = false;
+        }
+
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
         private Border CrearTarjetaPokemon(UserControl control, iPokemon pokemon)
         {
             Grid contenido = new Grid
@@ -111,9 +178,15 @@ namespace ProyectoVacioUWP_Base
                 Spacing = 10
             };
 
+<<<<<<< HEAD
                 TextBlock titulo = new TextBlock    
             {
                 Text = pokemon.Nombre ?? "Desconocido", // Manejo del nulo
+=======
+            TextBlock titulo = new TextBlock
+            {
+                Text = pokemon.Nombre,
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                 FontSize = 28,
                 FontWeight = Windows.UI.Text.FontWeights.Bold,
                 Foreground = new SolidColorBrush(Colors.White),
@@ -130,7 +203,11 @@ namespace ProyectoVacioUWP_Base
 
             TextBlock descripcion = new TextBlock
             {
+<<<<<<< HEAD
                 Text = pokemon.Descripcion ?? "Sin descripción", // Manejo del nulo
+=======
+                Text = pokemon.Descripcion,
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                 FontSize = 15,
                 Foreground = new SolidColorBrush(Color.FromArgb(235, 255, 255, 255)),
                 TextWrapping = TextWrapping.WrapWholeWords,
@@ -139,7 +216,11 @@ namespace ProyectoVacioUWP_Base
 
             TextBlock tipos = new TextBlock
             {
+<<<<<<< HEAD
                 Text = $"Tipo: {pokemon.Tipo ?? "Desconocido"}", // Manejo del nulo
+=======
+                Text = $"Tipo: {pokemon.Tipo}",
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                 FontSize = 14,
                 Foreground = new SolidColorBrush(Color.FromArgb(220, 220, 240, 255)),
                 TextWrapping = TextWrapping.WrapWholeWords

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Cómo añadir un Pokémon nuevo al proyecto
 
 Para que un Pokémon nuevo aparezca en la **Pokédex**, en la **selección** y en la **arena de combate**, se debe seguir una convención de nombres estricta y registrar el Pokémon en el catálogo general.
@@ -183,3 +184,6 @@ typeof(PikachuAAA),
 
 - **Revisar el namespace**: asegúrate de que el namespace de tus nuevos archivos sea exactamente `ProyectoVacioUWP_Base`. Si usas un namespace diferente, la interfaz `iPokemon` podría no detectarse correctamente o incluso provocar errores de compilación en el proyecto.
 - **Revisa** el ejemplo de `Empoleon` para comprobar cómo están definidos tanto el XAML como el archivo `.cs`.
+=======
+# IPOII_LAB
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167

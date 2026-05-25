@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
+=======
+using Windows.UI.Xaml.Controls;
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
 
 namespace ProyectoVacioUWP_Base
 {
@@ -10,6 +14,7 @@ namespace ProyectoVacioUWP_Base
         {
             this.InitializeComponent();
         }
+<<<<<<< HEAD
 
 
         private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -35,5 +40,7 @@ namespace ProyectoVacioUWP_Base
 
             giro.Begin();
         }
+=======
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
     }
 }

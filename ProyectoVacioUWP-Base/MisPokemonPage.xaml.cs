@@ -7,6 +7,7 @@ namespace ProyectoVacioUWP_Base
         public MisPokemonPage()
         {
             this.InitializeComponent();
+<<<<<<< HEAD
 
             // En lugar de ocultar manualmente cada Pokemon, ejecutamos un evento cuando termine de cargar la página
             this.Loaded += MisPokemonPage_Loaded;
@@ -39,6 +40,8 @@ namespace ProyectoVacioUWP_Base
                 // Volvemos a llamar a este mismo método (recursividad) para revisar dentro de contenedores (como el Grid o los Viewbox)
                 OcultarBarrasYElementos(hijo);
             }
+=======
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
         }
     }
 }

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using System;
 using Windows.UI.Xaml;
+=======
+﻿using Windows.UI.Xaml;
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -51,9 +55,16 @@ namespace ProyectoVacioUWP_Base
 
         private void CargarVistaPokemon(iPokemon pokemon)
         {
+<<<<<<< HEAD
             // Creamos una nueva instancia del mismo tipo que el pokemon actual
             if (Activator.CreateInstance(pokemon.GetType()) is iPokemon vista && vista is UIElement vistaVisual)
             {
+=======
+            if (pokemon is EmpoleonARS)
+            {
+                EmpoleonARS vista = new EmpoleonARS();
+
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                 vista.Nombre = pokemon.Nombre;
                 vista.Vida = pokemon.Vida;
                 vista.Energia = pokemon.Energia;
@@ -72,7 +83,11 @@ namespace ProyectoVacioUWP_Base
                 vista.verEscudo(false);
                 vista.activarAniIdle(true);
 
+<<<<<<< HEAD
                 vbPokemon.Child = vistaVisual;
+=======
+                vbPokemon.Child = vista;
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
             }
         }
     }

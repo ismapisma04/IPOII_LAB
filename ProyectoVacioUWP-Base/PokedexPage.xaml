@@ -32,13 +32,21 @@
 
             <StackPanel Spacing="6">
                 <TextBlock
+<<<<<<< HEAD
                     x:Uid="PokedexTitulo"
+=======
+                    Text="Pokémon disponibles"
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     FontSize="34"
                     FontWeight="Bold"
                     Foreground="White"/>
 
                 <TextBlock
+<<<<<<< HEAD
                     x:Uid="PokedexSubtitulo"
+=======
+                    Text="Pulsa sobre cualquier tarjeta para abrir la información detallada."
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                     FontSize="15"
                     TextWrapping="WrapWholeWords"
                     Foreground="#E6FFFFFF"/>
@@ -64,13 +72,21 @@
 
                 <StackPanel Spacing="18">
                     <TextBlock
+<<<<<<< HEAD
                         x:Uid="PokedexListaTitulo"
+=======
+                        Text="Lista de la Pokédex"
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                         FontSize="24"
                         FontWeight="SemiBold"
                         Foreground="White"/>
 
                     <TextBlock
+<<<<<<< HEAD
                         x:Uid="PokedexListaSubtitulo"
+=======
+                        Text="Busca por nombre o descripción y filtra por hasta dos tipos."
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                         FontSize="14"
                         Foreground="#DDEAFBFF"
                         TextWrapping="WrapWholeWords"/>
@@ -92,7 +108,11 @@
                             Padding="14,10">
                             <TextBox
                                 x:Name="txtBusquedaPokemon"
+<<<<<<< HEAD
                                 x:Uid="TxtBusqueda"
+=======
+                                PlaceholderText="Buscar Pokémon..."
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                                 TextChanged="txtBusquedaPokemon_TextChanged"
                                 Background="Transparent"
                                 Foreground="White"
@@ -102,13 +122,21 @@
 
                         <ComboBox
                             x:Name="cbTipo1"
+<<<<<<< HEAD
                             x:Uid="CbTipo1"
                             Grid.Column="1"
                             SelectionChanged="Filtros_SelectionChanged"
+=======
+                            Grid.Column="1"
+                            Header="Tipo 1"
+                            SelectionChanged="Filtros_SelectionChanged"
+                            PlaceholderText="Selecciona un tipo"
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                             MinWidth="160"/>
 
                         <ComboBox
                             x:Name="cbTipo2"
+<<<<<<< HEAD
                             x:Uid="CbTipo2"
                             Grid.Column="2"
                             SelectionChanged="Filtros_SelectionChanged"
@@ -117,6 +145,17 @@
                         <Button
                             x:Uid="BtnLimpiar"
                             Grid.Column="3"
+=======
+                            Grid.Column="2"
+                            Header="Tipo 2"
+                            SelectionChanged="Filtros_SelectionChanged"
+                            PlaceholderText="Selecciona un tipo"
+                            MinWidth="160"/>
+
+                        <Button
+                            Grid.Column="3"
+                            Content="Limpiar"
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                             Click="btnLimpiarFiltros_Click"
                             VerticalAlignment="Bottom"
                             Margin="0,0,0,2"/>
@@ -124,7 +163,11 @@
 
                     <TextBlock
                         x:Name="txtResultados"
+<<<<<<< HEAD
                         x:Uid="TxtResultados"
+=======
+                        Text="Mostrando todos los Pokémon"
+>>>>>>> 9d834adeac127a597f8b9d0a1ebf7affb9a58167
                         FontSize="14"
                         Foreground="#E6FFFFFF"/>
 
