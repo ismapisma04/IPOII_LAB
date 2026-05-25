@@ -1,0 +1,229 @@
+<Page
+    x:Class="ProyectoVacioUWP_Base.MisPokemonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoVacioUWP_Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:ProyectoUWPenBlanco"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.Resources>
+
+        <!-- Fondo general -->
+        <LinearGradientBrush x:Key="FondoPokemonBrush"
+                             StartPoint="0,0"
+                             EndPoint="1,1">
+
+            <GradientStop Color="#FF0F172A" Offset="0"/>
+            <GradientStop Color="#FF1E3A5F" Offset="0.5"/>
+            <GradientStop Color="#FF2563EB" Offset="1"/>
+
+        </LinearGradientBrush>
+
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  VerticalScrollMode="Enabled">
+
+        <Grid Padding="24"
+              Background="{StaticResource FondoPokemonBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- CABECERA -->
+            <Border Grid.Row="0"
+                    Margin="0,0,0,24"
+                    Padding="24,18"
+                    CornerRadius="22"
+                    Background="#22FFFFFF"
+                    BorderBrush="#55FFFFFF"
+                    BorderThickness="1">
+
+                <StackPanel Spacing="6">
+
+                    <TextBlock x:Uid="MisPokemonTitulo"
+                               FontSize="36"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+
+                    <TextBlock x:Uid="MisPokemonSubtitulo"
+                               FontSize="16"
+                               Foreground="#D6E4FF"
+                               TextWrapping="Wrap"/>
+
+                </StackPanel>
+            </Border>
+
+            <!-- GRID DE POKEMON -->
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- EMPoleon -->
+                <Border Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="14"
+                        Padding="18"
+                        CornerRadius="26"
+                        Background="#22FFFFFF"
+                        BorderBrush="#55FFFFFF"
+                        BorderThickness="1">
+
+                    <StackPanel Spacing="14">
+
+                        <TextBlock Text="Empoleon"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+
+                        <Viewbox Height="260">
+                            <local:EmpoleonARS x:Name="empoleon"/>
+                        </Viewbox>
+
+                        <TextBlock Text="Tipo Agua / Acero"
+                                   Foreground="#D6E4FF"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- SNORLAX -->
+                <Border Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="14"
+                        Padding="18"
+                        CornerRadius="26"
+                        Background="#22FFFFFF"
+                        BorderBrush="#55FFFFFF"
+                        BorderThickness="1">
+
+                    <StackPanel Spacing="14">
+
+                        <TextBlock Text="Snorlax"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+
+                        <Viewbox Height="260">
+                            <local:SnorlaxISU x:Name="snorlax"/>
+                        </Viewbox>
+
+                        <TextBlock Text="Tipo Normal"
+                                   Foreground="#D6E4FF"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- ROTOM -->
+                <Border Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="14"
+                        Padding="18"
+                        CornerRadius="26"
+                        Background="#22FFFFFF"
+                        BorderBrush="#55FFFFFF"
+                        BorderThickness="1">
+
+                    <StackPanel Spacing="14">
+
+                        <TextBlock Text="Rotom"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+
+                        <Viewbox Height="260">
+                            <local:RotomPVA x:Name="rotom"/>
+                        </Viewbox>
+
+                        <TextBlock Text="Tipo Eléctrico / Fantasma"
+                                   Foreground="#D6E4FF"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- GENGAR -->
+                <Border Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="14"
+                        Padding="18"
+                        CornerRadius="26"
+                        Background="#22FFFFFF"
+                        BorderBrush="#55FFFFFF"
+                        BorderThickness="1">
+
+                    <StackPanel Spacing="14">
+
+                        <TextBlock Text="Gengar"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+
+                        <Viewbox Height="260">
+                            <local:GengarMBGCS x:Name="gengar"/>
+                        </Viewbox>
+
+                        <TextBlock Text="Tipo Fantasma / Veneno"
+                                   Foreground="#D6E4FF"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- BRASITAL -->
+                <Border Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="14"
+                        Padding="18"
+                        CornerRadius="26"
+                        Background="#22FFFFFF"
+                        BorderBrush="#55FFFFFF"
+                        BorderThickness="1">
+
+                    <StackPanel Spacing="14">
+
+                        <TextBlock Text="Brasital"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+
+                        <Viewbox Height="260">
+                            <local1:BrasitalEHA x:Name="brasital"/>
+                        </Viewbox>
+
+                        <TextBlock Text="Tipo Fuego"
+                                   Foreground="#D6E4FF"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,887 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{22712C46-E50E-4087-8EA2-F37398B06592}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoVacioUWP_Base</RootNamespace>
+    <AssemblyName>ProyectoVacioUWP-Base</AssemblyName>
+    <DefaultLanguage>es-ES</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22621.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PaginaConfiguración.xaml.cs">
+      <DependentUpon>PaginaConfiguración.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArenaCombatePage.xaml.cs">
+      <DependentUpon>ArenaCombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PokemonCatalogo.cs" />
+    <Compile Include="Helpers\PokemonFactory.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonDetallePage.xaml.cs">
+      <DependentUpon>PokemonDetallePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\BrasitalEHA\BrasitalEHA.cs" />
+    <Compile Include="Pokemons\ComputerrorDLM\ComputerrorDLM.xaml.cs">
+      <DependentUpon>ComputerrorDLM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\DittoAEJ\DittoAEJ.xaml.cs">
+      <DependentUpon>DittoAEJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\DollivPSI\DollivPS.xaml.cs">
+      <DependentUpon>DollivPS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\DragoniteDGM\DragoniteDGM.xaml.cs">
+      <DependentUpon>DragoniteDGM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\DrifloonShinyARG\DrifloonShinyARG.xaml.cs">
+      <DependentUpon>DrifloonShinyARG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\FennekinRRM\FennekinRRM.xaml.cs">
+      <DependentUpon>FennekinRRM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\GengarMBGCS\GengarMBGCS.xaml.cs">
+      <DependentUpon>GengarMBGCS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\HankRCC\HankRCC.xaml.cs">
+      <DependentUpon>HankRCC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\HoothootJDCF\HoothootJDCF.xaml.cs">
+      <DependentUpon>HoothootJDCF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\KingdraJFA\KingdraJFA.xaml.cs">
+      <DependentUpon>KingdraJFA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\MonfernoCRS\MonfernoCRS.xaml.cs">
+      <DependentUpon>MonfernoCRS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\NatuCAAA\NatuCAAA.xaml.cs">
+      <DependentUpon>NatuCAAA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\OddishNPSC\OddishNP.xaml.cs">
+      <DependentUpon>OddishNP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\OshawootVGML\Oshawott.xaml.cs">
+      <DependentUpon>Oshawott.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\PiplupMTS\Piplup1.xaml.cs">
+      <DependentUpon>Piplup1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\PliwadJAM\PoliwagJAM.xaml.cs">
+      <DependentUpon>PoliwagJAM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\PsyduckADM\PsyduckADM.xaml.cs">
+      <DependentUpon>PsyduckADM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\RotomPVA\iPokemon.cs" />
+    <Compile Include="Pokemons\RotomPVA\RotomPVA_.xaml.cs">
+      <DependentUpon>RotomPVA_.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\RynotronJLC\RhynotronControl.xaml.cs">
+      <DependentUpon>RhynotronControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\SnorlaxISU\SnorlaxISU.xaml.cs">
+      <DependentUpon>SnorlaxISU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\SquirtleMRGM\SquirtleMRGM.xaml.cs">
+      <DependentUpon>SquirtleMRGM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\TorchicJFBR\TorchicCGM.xaml.cs">
+      <DependentUpon>TorchicCGM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\UnownOVG\UnownOVG.xaml.cs">
+      <DependentUpon>UnownOVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\ZapdosRGS\ZapdosRGS.xaml.cs">
+      <DependentUpon>ZapdosRGS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MisPokemonPage.xaml.cs">
+      <DependentUpon>MisPokemonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexPage.xaml.cs">
+      <DependentUpon>PokedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CombatePage.xaml.cs">
+      <DependentUpon>CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AcercaDePage.xaml.cs">
+      <DependentUpon>AcercaDePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\EmpoleonARS\EmpoleonARS.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Bola_invoca_pokemons.png" />
+    <Content Include="Assets\fondocombate.png" />
+    <Content Include="Assets\versusimage.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\background2.jpg" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\StoreLogo.png" />
+    <Content Include="Pokemons\BrasitalEHA\AssetsBrasitalEHA\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\Antivirus2-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\Antivirus2Escudo-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\apagadoDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\aranazoFlojoDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\aranazoSimple-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\bateriaNaranja-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\bateriaRoja-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\bateriaVerde-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\cableEnchufe.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\cablesCentro.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\cablesDerechos1.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\cablesIzquierdos1.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\cablesLateral.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\computerrorDiedIcon.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\computerrorLifeIcon.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\computerror_preevolucionPantalla-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\corazon.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\curaDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\desescudoDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\desexplosionDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\enchufador.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\enchufe.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\enchufe1-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\energia.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\escudoDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\explosionDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\fondoDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\fondoPokemon.jpg" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\muerteDEFINITIVA.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\rayoDEFINITIVO.wav" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\rayoMorado-removebg-preview.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\red-potion.png" />
+    <Content Include="Pokemons\ComputerrorDLM\AssetsComputerrorDLM\yellow-potion.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\corazon.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\curar.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\dormir.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\energia.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\energia.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\escudo.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\escudo.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\fondop.jpg" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\fuerte.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\herido.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\muerte.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\pew.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\pokemon.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\red-potion.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\StoreLogo.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\vote.mp3" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\DittoAEJ\AssetsDittoAEJ\yellow-potion.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\corazon.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\Dolliv.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\energia.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\fondo_olivos.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\red-potion.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\StoreLogo.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\DollivPSI\AssetsPSI\yellow-potion.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\corazon.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\energia.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\Escudo.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\Fondo.jpg" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\Herida.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\Lagrima.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\Manta.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\red-potion.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\soplo.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\soplo_cansancio.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\sudor.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\tornado.png" />
+    <Content Include="Pokemons\DragoniteDGM\AssetsDragoniteDGM\yellow-potion.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\AtaqueFuertePokemon-removebg-preview.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\carta difrool shiny.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\corazon.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\energia.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\EscudoPokemon-removebg-preview.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\fondopokemon verdadero.jpg.jpeg" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\freesound_community-shields-down-47607.mp3" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\gotadeaguaverdad.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\gotadesangre.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\homemade_sfx-slap-hurt-pain-sound-effect-262618.mp3" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\red-potion.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\StoreLogo.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\tornado.mp3" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\DrifloonShinyARG\AssetsARG\yellow-potion.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\agua.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\aureola.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\burbujas.mp3" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\corazon.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\destello_blanco.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\destello_rojo.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\destello_rojo2.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\energia.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\escudo laser.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\glaciar.jpg" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\gotasudor2.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\muerte.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\muertearcade.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\ojos-derrotado.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\ola.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\pocion.wav" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\red-potion.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\shield.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\sonido olas del mar.mp3" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\StoreLogo.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\tirita.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\yellow-potion.png" />
+    <Content Include="Pokemons\EmpoleonARS\AssetsEmpoleonARS\zzz.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\corazon.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\curacion.mp3" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\energia.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\escudo.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\espiral.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\fondo.jpg" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\llama.mp3" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\llama.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\red-potion.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\StoreLogo.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\FennekinRRM\AssetsFennekinRRM\yellow-potion.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\corazon.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\energia.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar lengua.jpg" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Gengar.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_ataquefuerte.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_cansado.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_pokemon.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\gengar_risa.mp3" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\humo.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\mansion.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\paisajePokemon.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\red-potion.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\SplashScreen.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\StoreLogo.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\sudor.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\GengarMBGCS\AssetsGengarMBGCS\yellow-potion.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 1\corazon.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 1\energia.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 1\red-potion.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 1\yellow-potion.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 2 fondo\madness-background-2.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 2 fondo\madness-combat-background.jpg" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 2 fondo\pokemon_background.jpg" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Práctica 2 fondo\Purgatory.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Baretta-1.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Baretta-2.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Baretta-3.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Impact - Bodyfall02.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Impact - punch01.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Madness-Death-Sound02.mp3" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\madness_combat_1_soundtrack.mp3" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Sound - Woosh1.mp3.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Sword Swipe And Klang 05.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Sword Whip 01.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Sword Whip 02.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Sonidos\Sword Whip 03.wav" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\StoreLogo.png" />
+    <Content Include="Pokemons\HankRCC\AssetsHankRCC\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\corazon.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\energia.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\fondo.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\red-potion.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\StoreLogo.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\yellow-potion.png" />
+    <Content Include="Pokemons\HoothootJDCF\assetshoothootjdcf\zzzdormir.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\burbujillas.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\escudo-agua.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\explosion-agua.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\interfaz\corazon.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\interfaz\energia.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\interfaz\fondo-batalla.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\interfaz\red-potion.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\interfaz\yellow-potion.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\kingdra-sonido-ataque.m4a" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\StoreLogo.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\sudor.png" />
+    <Content Include="Pokemons\KingdraJFA\AssetsJFA\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\MarrilADMO\AssetsMarillADO\background.png" />
+    <Content Include="Pokemons\MarrilADMO\AssetsMarillADO\bubble.png" />
+    <Content Include="Pokemons\MarrilADMO\AssetsMarillADO\corazon.png" />
+    <Content Include="Pokemons\MarrilADMO\AssetsMarillADO\energia.png" />
+    <Content Include="Pokemons\MarrilADMO\AssetsMarillADO\red-potion.png" />
+    <Content Include="Pokemons\MarrilADMO\AssetsMarillADO\yellow-potion.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\corazon.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\energia.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\energia_recuperacion.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\fondo.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Lanzallamas.mp3" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\llamarada3.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\ojo_espiral.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Placaje.mp3" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\placaje.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\rasguños2.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\rasguños3.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\red-potion.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Sonido_curacion.mp3" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\StoreLogo.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\MonfernoCRS\AssetsMonfernoCRS\yellow-potion.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\corazon.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\descanso.mp3" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\energia.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\fondo.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\golpe.mp3" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\lowHP.mp3" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\protección.mp3" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\red-potion.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\AssetsNatuCAAA\yellow-potion.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\StoreLogo.png" />
+    <Content Include="Pokemons\NatuCAAA\Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Audio\leaf_strong.mp3" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Audio\leaf_weak.mp3" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Audio\rest.mp3" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Audio\shield.mp3" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\bolt.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\fondoPokemon.jpg" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\heart.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\potionRed.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\potionYellow.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\SplashScreen.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\StoreLogo.png" />
+    <Content Include="Pokemons\OddishNPSC\AssetsOddishNP\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\ataqueflojo.mp3" />
+    <Content Include="Pokemons\OshawootVGML\Assets\ataquefuerte.mp3" />
+    <Content Include="Pokemons\OshawootVGML\Assets\corazon.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\energia.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\mollyroselee-a-person-snoring-468533.mp3" />
+    <Content Include="Pokemons\OshawootVGML\Assets\Osa.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\OsaFondo.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\red-potion.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\Shield 5.mp3" />
+    <Content Include="Pokemons\OshawootVGML\Assets\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\StoreLogo.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\OshawootVGML\Assets\yellow-potion.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\AguaHelada.mp4" />
+    <Content Include="Pokemons\PiplupMTS\Assets\AtaqueFlojo.mp3" />
+    <Content Include="Pokemons\PiplupMTS\Assets\AtaqueFuerte.mp3" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Carta.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Defensa.mp3" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Descansar.mp3" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Energy.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Heart.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\PotionRed.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\PotionYellow.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\StoreLogo.png" />
+    <Content Include="Pokemons\PiplupMTS\Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\corazon.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\energia.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\PaisajePokemon.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\red-potion.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\StoreLogo.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\PliwadJAM\Assets\yellow-potion.png" />
+    <Content Include="Pokemons\PsyduckADM\AssetsPsyduckADM\coast.jpg" />
+    <Content Include="Pokemons\PsyduckADM\AssetsPsyduckADM\corazon.png" />
+    <Content Include="Pokemons\PsyduckADM\AssetsPsyduckADM\energia.png" />
+    <Content Include="Pokemons\PsyduckADM\AssetsPsyduckADM\fondonuevo.png" />
+    <Content Include="Pokemons\PsyduckADM\AssetsPsyduckADM\red-potion.png" />
+    <Content Include="Pokemons\PsyduckADM\AssetsPsyduckADM\yellow-potion.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\ataque_fuerte.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\corazon.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\dormido.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\energia.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Escudo.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Fondo.jpg" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\musica_fondo.mp3" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\rotom_cry.mp4" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\rotom_cry_fuerte.mp4" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\StoreLogo.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\RotomPVA\AssetsPVA\yellow-potion.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Ataque1.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Ataque2.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\ataqueFuerte_inicio.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\background.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\CansadoP1.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\CansadoP2.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\corazon.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Derrotado1.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Derrotado2.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Descansar.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Descansar_final.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\energia.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\EscudoActivar.ogg" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\idleRespirar.mp3" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\imgEscudo.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\recibirDano.wav" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\red-potion.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\StoreLogo.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\RynotronJLC\AssetsJLC\yellow-potion.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Corazón.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Rayo.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\StoreLogo.png" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Tambor_Z_Animacion.jpg" />
+    <Content Include="Pokemons\SnorlaxISU\AssetsSnorlaxISU\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\agua_debil.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\agua_fuerte.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\ataque_flojo.mp3" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\ataque_fuerte.mp3" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\corazon.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\defensa.mp3" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\derrotado.mp3" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\descanso.mp3" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\energia.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\imagen_Fondo.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\impacto_agua.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\red-potion.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\StoreLogo.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\sudor.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\tirita.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\tirita1.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\tirita2.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\tirita3.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\tirita4.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\SquirtleMRGM\AssetsSquirtleMRGM\yellow-potion.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\corazon.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\fondo.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\pocion_amarilla.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\pocion_roja.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\rayo.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\StoreLogo.png" />
+    <Content Include="Pokemons\TorchicJFBR\AssetsTorchicCGM\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\ataque_flojo.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\ataque_fuerte.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\corazon.png" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\derrotado.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\energia.png" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\escudo.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\fondo.jpg" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\herido.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\pocion.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\red-potion.png" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\revivir.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\ronquido.mp3" />
+    <Content Include="Pokemons\UnownOVG\AssetsUnownOVG\yellow-potion.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\aleteo.mp3" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\ataque-debil.mpeg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\ataque-fuerte.mpeg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\corazon.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\descanso-bucle.mpeg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\energia.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\escudo_abajo.mpeg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\escudo_arriba.mpeg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\fondo2.jpg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\fondo3.jpg" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\gota-sudor.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\grito.mp3" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\LockScreenLogo.scale-200.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\red-potion.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\SplashScreen.scale-200.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\Square150x150Logo.scale-200.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\Square44x44Logo.scale-200.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\StoreLogo.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\Wide310x150Logo.scale-200.png" />
+    <Content Include="Pokemons\ZapdosRGS\AssetsZapdosRGS\yellow-potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="PaginaConfiguración.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ArenaCombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PokemonDetallePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MisPokemonPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PokedexPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CombatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AcercaDePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\BrasitalEHA\BrasitalEHA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\ComputerrorDLM\ComputerrorDLM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\DittoAEJ\DittoAEJ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\DollivPSI\DollivPS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\DragoniteDGM\DragoniteDGM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\DrifloonShinyARG\DrifloonShinyARG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\EmpoleonARS\EmpoleonARS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\FennekinRRM\FennekinRRM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\GengarMBGCS\GengarMBGCS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\HankRCC\HankRCC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\HoothootJDCF\HoothootJDCF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\KingdraJFA\KingdraJFA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\MonfernoCRS\MonfernoCRS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\NatuCAAA\NatuCAAA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\OddishNPSC\OddishNP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\OshawootVGML\Oshawott.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\PiplupMTS\Piplup1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\PliwadJAM\PoliwagJAM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\PsyduckADM\PsyduckADM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\RotomPVA\RotomPVA_.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\RynotronJLC\RhynotronControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\SnorlaxISU\SnorlaxISU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\SquirtleMRGM\SquirtleMRGM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\TorchicJFBR\TorchicCGM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\UnownOVG\UnownOVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\ZapdosRGS\ZapdosRGS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.14</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\es\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en\Resources.resw" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
