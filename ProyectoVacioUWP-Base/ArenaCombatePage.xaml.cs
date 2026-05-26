@@ -25,6 +25,8 @@ namespace ProyectoVacioUWP_Base
         private DispatcherTimer gameTimer;
         private bool combateTerminado = false;
         private bool accionEnCurso = false;
+        private bool esContraPC = false;
+        private Random random = new Random();
 
         // Constantes del combate
         private const int DANO_DEBIL = 15;
@@ -49,6 +51,8 @@ namespace ProyectoVacioUWP_Base
 
             if (e.Parameter is CombatePage.CombateParametros parametros)
             {
+                esContraPC = parametros.EsContraPC;
+                
                 var pokemonControlP1 = PokemonFactory.CrearControlPokemon(BuscarPokemonOriginalPorNombre(parametros.NombrePokemonP1));
                 var pokemonControlP2 = PokemonFactory.CrearControlPokemon(BuscarPokemonOriginalPorNombre(parametros.NombrePokemonP2));
 
@@ -71,6 +75,14 @@ namespace ProyectoVacioUWP_Base
                 {
                     InicializarBarras();
                     gameTimer.Start();
+                    
+                    if (esContraPC)
+                    {
+                        btnDebilP2.Visibility = Visibility.Collapsed;
+                        btnFuerteP2.Visibility = Visibility.Collapsed;
+                        btnDormirP2.Visibility = Visibility.Collapsed;
+                        btnEscudoP2.Visibility = Visibility.Collapsed;
+                    }
                 }
             }
         }
@@ -143,6 +155,40 @@ namespace ProyectoVacioUWP_Base
 
             ActualizarBarras();
             EvaluarEstados();
+
+            if (esContraPC && !accionEnCurso && !combateTerminado)
+            {
+                JugarTurnoPC();
+            }
+        }
+
+        private void JugarTurnoPC()
+        {
+            // Probabilidad de hacer algo en este tick de 500ms
+            if (random.NextDouble() < 0.3) return; // 30% de probabilidad de no hacer nada
+
+            // Decision simple:
+            // Si le falta vida y tiene energía, dormir
+            if (pokemonP2.Vida < 40 && random.NextDouble() < 0.4)
+            {
+                btnDormirP2_Click(null, null);
+            }
+            // Si tiene mucha energía, ataque fuerte
+            else if (pokemonP2.Energia >= COSTE_ENERGIA_FUERTE)
+            {
+                if (random.NextDouble() < 0.7) // 70%
+                    btnAtaqueFuerteP2_Click(null, null);
+                else
+                    btnEscudoP2_Click(null, null);
+            }
+            // Si tiene energía para debil
+            else if (pokemonP2.Energia >= COSTE_ENERGIA_DEBIL)
+            {
+                if (random.NextDouble() < 0.2) // 20%
+                    btnEscudoP2_Click(null, null);
+                else
+                    btnAtaqueDebilP2_Click(null, null);
+            }
         }
 
         private void EvaluarEstados()
@@ -205,7 +251,57 @@ namespace ProyectoVacioUWP_Base
         private void ActivarBotonesAccion()
         {
             var botones = new List<Button> { btnDebilP1, btnFuerteP1, btnDormirP1, btnEscudoP1, btnDebilP2, btnFuerteP2, btnDormirP2, btnEscudoP2 };
-            foreach (var btn in botones) btn.IsEnabled = true;
+            foreach (var btn in botones) 
+                btn.IsEnabled = true;
+        }
+
+        private double ObtenerEfectividadDeTipo(string tiposAtacante, string tiposDefensor)
+        {
+            if (string.IsNullOrWhiteSpace(tiposAtacante) || string.IsNullOrWhiteSpace(tiposDefensor))
+                return 1.0;
+
+            var atacantes = tiposAtacante.ToLower().Split(new[] { '/', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var defensores = tiposDefensor.ToLower().Split(new[] { '/', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            double multiplicador = 1.0;
+
+            foreach (string tAtacante in atacantes)
+            {
+                foreach (string tDefensor in defensores)
+                {
+                    if (tAtacante == "agua" && (tDefensor == "fuego" || tDefensor == "tierra" || tDefensor == "roca")) multiplicador *= 2.0;
+                    else if (tAtacante == "agua" && (tDefensor == "agua" || tDefensor == "planta" || tDefensor == "dragón" || tDefensor == "dragon")) multiplicador *= 0.5;
+
+                    else if (tAtacante == "fuego" && (tDefensor == "planta" || tDefensor == "hielo" || tDefensor == "bicho" || tDefensor == "acero")) multiplicador *= 2.0;
+                    else if (tAtacante == "fuego" && (tDefensor == "fuego" || tDefensor == "agua" || tDefensor == "roca" || tDefensor == "dragón" || tDefensor == "dragon")) multiplicador *= 0.5;
+
+                    else if (tAtacante == "planta" && (tDefensor == "agua" || tDefensor == "tierra" || tDefensor == "roca")) multiplicador *= 2.0;
+                    else if (tAtacante == "planta" && (tDefensor == "fuego" || tDefensor == "planta" || tDefensor == "veneno" || tDefensor == "volador" || tDefensor == "bicho" || tDefensor == "dragón" || tDefensor == "dragon" || tDefensor == "acero")) multiplicador *= 0.5;
+
+                    else if ((tAtacante == "eléctrico" || tAtacante == "electrico") && (tDefensor == "agua" || tDefensor == "volador")) multiplicador *= 2.0;
+                    else if ((tAtacante == "eléctrico" || tAtacante == "electrico") && (tDefensor == "tierra")) multiplicador *= 0.0;
+                    else if ((tAtacante == "eléctrico" || tAtacante == "electrico") && (tDefensor == "eléctrico" || tDefensor == "electrico" || tDefensor == "planta" || tDefensor == "dragón" || tDefensor == "dragon")) multiplicador *= 0.5;
+
+                    else if (tAtacante == "normal" && (tDefensor == "roca" || tDefensor == "acero")) multiplicador *= 0.5;
+                    else if (tAtacante == "normal" && tDefensor == "fantasma") multiplicador *= 0.0;
+                    
+                    else if (tAtacante == "fantasma" && (tDefensor == "fantasma" || tDefensor == "psíquico" || tDefensor == "psiquico")) multiplicador *= 2.0;
+                    else if (tAtacante == "fantasma" && tDefensor == "siniestro") multiplicador *= 0.5;
+                    else if (tAtacante == "fantasma" && tDefensor == "normal") multiplicador *= 0.0;
+                }
+            }
+
+            return multiplicador;
+        }
+
+        private int CalcularDano(iPokemon atacante, iPokemon defensor, int danoBase, bool estaDefendiendo)
+        {
+            double multiplicador = ObtenerEfectividadDeTipo(atacante.Tipo, defensor.Tipo);
+            
+            if (estaDefendiendo) multiplicador *= 0.5;
+
+            int danoFinal = (int)Math.Round(danoBase * multiplicador);
+            return danoFinal;
         }
 
         private async void btnAtaqueDebilP1_Click(object sender, RoutedEventArgs e)
@@ -217,7 +313,7 @@ namespace ProyectoVacioUWP_Base
 
             pokemonP1.Energia -= COSTE_ENERGIA_DEBIL;
             pokemonP1.animacionAtaqueFlojo();
-            int dano = p2Defendiendo ? DANO_DEBIL / 2 : DANO_DEBIL;
+            int dano = CalcularDano(pokemonP1, pokemonP2, DANO_DEBIL, p2Defendiendo);
             pokemonP2.Vida -= dano;
             p2Defendiendo = false;
             ActualizarBarras();
@@ -241,7 +337,7 @@ namespace ProyectoVacioUWP_Base
 
             pokemonP1.Energia -= COSTE_ENERGIA_FUERTE;
             pokemonP1.animacionAtaqueFuerte();
-            int dano = p2Defendiendo ? DANO_FUERTE / 2 : DANO_FUERTE;
+            int dano = CalcularDano(pokemonP1, pokemonP2, DANO_FUERTE, p2Defendiendo);
             pokemonP2.Vida -= dano;
             p2Defendiendo = false;
             ActualizarBarras();
@@ -302,7 +398,7 @@ namespace ProyectoVacioUWP_Base
 
             pokemonP2.Energia -= COSTE_ENERGIA_DEBIL;
             pokemonP2.animacionAtaqueFlojo();
-            int dano = p1Defendiendo ? DANO_DEBIL / 2 : DANO_DEBIL;
+            int dano = CalcularDano(pokemonP2, pokemonP1, DANO_DEBIL, p1Defendiendo);
             pokemonP1.Vida -= dano;
             p1Defendiendo = false;
             ActualizarBarras();
@@ -326,7 +422,7 @@ namespace ProyectoVacioUWP_Base
 
             pokemonP2.Energia -= COSTE_ENERGIA_FUERTE;
             pokemonP2.animacionAtaqueFuerte();
-            int dano = p1Defendiendo ? DANO_FUERTE / 2 : DANO_FUERTE;
+            int dano = CalcularDano(pokemonP2, pokemonP1, DANO_FUERTE, p1Defendiendo);
             pokemonP1.Vida -= dano;
             p1Defendiendo = false;
             ActualizarBarras();

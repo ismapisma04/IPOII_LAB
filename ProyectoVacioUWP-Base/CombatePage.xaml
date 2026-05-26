@@ -249,31 +249,38 @@
 
         <!-- BOTON VS -->
 
-        <Button x:Name="btnVersus"
-                Grid.Row="2"
-                Grid.Column="1"
-                Width="290"
-                Height="210"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Background="Transparent"
-                BorderThickness="0"
-                IsEnabled="False"
-                Visibility="Collapsed"
-                Opacity="0"
-                Click="btnVersus_Click"
-                RenderTransformOrigin="0.5,0.5">
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            <ToggleSwitch x:Name="swContraPC"
+                          Header="Jugar contra PC"
+                          OnContent="Sí"
+                          OffContent="No"
+                          Foreground="White"
+                          HorizontalAlignment="Center"
+                          Margin="0,0,0,10" />
 
-            <Button.RenderTransform>
-                <ScaleTransform x:Name="scaleVs"
-                                ScaleX="1"
-                                ScaleY="1"/>
-            </Button.RenderTransform>
+            <Button x:Name="btnVersus"
+                    Width="290"
+                    Height="210"
+                    HorizontalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    IsEnabled="False"
+                    Visibility="Collapsed"
+                    Opacity="0"
+                    Click="btnVersus_Click"
+                    RenderTransformOrigin="0.5,0.5">
 
-            <Image Source="ms-appx:///Assets/versusimage.png"
-                   Stretch="Uniform"/>
+                <Button.RenderTransform>
+                    <ScaleTransform x:Name="scaleVs"
+                                    ScaleX="1"
+                                    ScaleY="1"/>
+                </Button.RenderTransform>
 
-        </Button>
+                <Image Source="ms-appx:///Assets/versusimage.png"
+                       Stretch="Uniform"/>
+
+            </Button>
+        </StackPanel>
 
         <!-- CAJA P2 -->
 

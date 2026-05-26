@@ -13,6 +13,7 @@ namespace ProyectoVacioUWP_Base
         {
             public string NombrePokemonP1 { get; set; }
             public string NombrePokemonP2 { get; set; }
+            public bool EsContraPC { get; set; }
         }
 
         public class PokemonSeleccionItem
@@ -151,7 +152,8 @@ namespace ProyectoVacioUWP_Base
             parametrosPendientes = new CombateParametros
             {
                 NombrePokemonP1 = pokemonSeleccionadoP1.Nombre,
-                NombrePokemonP2 = pokemonSeleccionadoP2.Nombre
+                NombrePokemonP2 = pokemonSeleccionadoP2.Nombre,
+                EsContraPC = swContraPC.IsOn
             };
 
             FadeNegroStoryboard.Begin();
