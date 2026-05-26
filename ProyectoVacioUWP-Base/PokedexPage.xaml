@@ -16,10 +16,14 @@
     </Page.Resources>
 
     <Grid Background="{StaticResource FondoPokedexBrush}">
+
+        <!-- Imagen de fondo que acompaña al gradiente azul -->
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
 
         <Border
             Grid.Row="0"
@@ -45,22 +49,26 @@
             </StackPanel>
         </Border>
 
+
+        <!-- Decoración del fondo -->
+
+
+
         <ScrollViewer
             Grid.Row="1"
             Margin="24,0,24,24"
             VerticalScrollBarVisibility="Auto"
             HorizontalScrollBarVisibility="Disabled"
             VerticalScrollMode="Enabled"
-            ZoomMode="Disabled">
+            ZoomMode="Disabled" ViewChanged="ScrollViewer_ViewChanged">
 
             <Border
                 MaxWidth="1100"
-                HorizontalAlignment="Center"
                 Padding="24"
                 CornerRadius="20"
                 Background="#1AFFFFFF"
                 BorderBrush="#33FFFFFF"
-                BorderThickness="1">
+                BorderThickness="1" Width="745">
 
                 <StackPanel Spacing="18">
                     <TextBlock
@@ -135,5 +143,111 @@
                 </StackPanel>
             </Border>
         </ScrollViewer>
+
+
+
+
+
+        <!-- Decoración del fondo -->
+
+
+        <!-- Ojos de Gengar -->
+        <Image
+            Source="/Assets/Ojos_gengar_sin_fondo.png"
+            Opacity="0.5"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0,0,30,473"
+            MaxWidth="400" Grid.Row="1" Height="300" Width="279" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="-35.009"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Pikachu con ojos saltones (da miedo)-->
+        <Image
+            Source="/Assets/succo-pokemon-1574006_1920.png"
+            Opacity="0.5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Margin="95,0,0,611"
+            MaxWidth="400" Height="300" Width="279" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Pikachu con martillo mi bro-->
+        <Image
+            Source="/Assets/succo-pokemon-1574647_1920.png"
+            Opacity="0.3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="1121,440,0,0"
+            MaxWidth="400" Grid.Row="1" Height="300" Width="279" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="-15.009"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Pikachu con la alerta -->
+        <Image
+           Source="/Assets/succo-pokemon-1574648_1920.png"
+           Opacity="0.3"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           Margin="89,414,0,0"
+           MaxWidth="400" Grid.Row="1" Height="300" Width="279" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Bola de pokedex -->
+        <Image
+            Source="/Assets/tumisu-pokemon-1530315_1920.png"
+            Opacity="0.3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,695,24,0"
+            MaxWidth="400" Grid.Row="1" Height="136" Width="158" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image
+            Source="/Assets/tumisu-pokemon-1530315_1920.png"
+            Opacity="0.3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,0,10,0"
+            MaxWidth="400" Grid.Row="1" Height="136" Width="158" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image
+            Source="/Assets/tumisu-pokemon-1530315_1920.png"
+            Opacity="0.3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,727,1126,0"
+            MaxWidth="400" Grid.Row="1" Height="136" Width="158" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image
+            Source="/Assets/tumisu-pokemon-1530315_1920.png"
+            Opacity="0.3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,296,1332,0"
+            MaxWidth="400" Grid.Row="1" Height="136" Width="158" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Image.RenderTransform>
+        </Image>
+
     </Grid>
 </Page>

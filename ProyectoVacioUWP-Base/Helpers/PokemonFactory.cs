@@ -135,13 +135,17 @@ namespace ProyectoVacioUWP_Base
             pokemonVisual.verPocionEnergia(false);
             pokemonVisual.verNombre(false);
             pokemonVisual.verEscudo(false);
-            pokemonVisual.activarAniIdle(true);
 
-            control.Width = 260;
-            control.Height = 180;
-            control.HorizontalAlignment = HorizontalAlignment.Left;
+            control.Width = double.NaN;
+            control.Height = double.NaN;
+            control.HorizontalAlignment = HorizontalAlignment.Center;
             control.VerticalAlignment = VerticalAlignment.Center;
             control.IsHitTestVisible = false;
+
+            control.Loaded += (s, e) =>
+            {
+                pokemonVisual.activarAniIdle(true);
+            };
         }
 
         public static void PrepararParaSeleccion(iPokemon pokemonVisual, UserControl control)
@@ -153,13 +157,17 @@ namespace ProyectoVacioUWP_Base
             pokemonVisual.verPocionEnergia(false);
             pokemonVisual.verNombre(false);
             pokemonVisual.verEscudo(false);
-            pokemonVisual.activarAniIdle(true);
 
             control.Width = 150;
             control.Height = 150;
             control.HorizontalAlignment = HorizontalAlignment.Center;
             control.VerticalAlignment = VerticalAlignment.Center;
             control.IsHitTestVisible = false;
+
+            control.Loaded += (s, e) =>
+            {
+                pokemonVisual.activarAniIdle(true);
+            };
         }
 
         public static Viewbox CrearVistaCompactaSeleccion(iPokemon pokemonOriginal)

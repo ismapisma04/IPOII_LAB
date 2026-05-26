@@ -170,6 +170,12 @@
   <ItemGroup>
     <Content Include="Assets\Bola_invoca_pokemons.png" />
     <Content Include="Assets\fondocombate.png" />
+    <Content Include="Assets\Fondo_barras_negras.jpeg" />
+    <Content Include="Assets\Ojos_gengar_sin_fondo.png" />
+    <Content Include="Assets\succo-pokemon-1574006_1920.png" />
+    <Content Include="Assets\succo-pokemon-1574647_1920.png" />
+    <Content Include="Assets\succo-pokemon-1574648_1920.png" />
+    <Content Include="Assets\tumisu-pokemon-1530315_1920.png" />
     <Content Include="Assets\versusimage.png" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -335,10 +341,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Strings\es\Resources.resw" />
+    <PRIResource Include="Strings\es\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Strings\en\Resources.resw" />
+    <PRIResource Include="Strings\en\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

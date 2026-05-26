@@ -93,10 +93,11 @@ namespace ProyectoVacioUWP_Base
                 BorderThickness = new Thickness(0),
                 CornerRadius = new CornerRadius(8),
                 Padding = new Thickness(10),
-                MinHeight = 190,
+                Height = 220, // Fijamos un alto exacto
+                Width = 260,  // Fijamos un ancho exacto
                 Child = new Viewbox
                 {
-                    Stretch = Stretch.Uniform,
+                    Stretch = Stretch.Uniform, // Se asegurará de acomodar toda la "foto" en este espacio
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center,
                     Child = control
@@ -267,6 +268,10 @@ namespace ProyectoVacioUWP_Base
         private void IrADetallePokemon(iPokemon pokemon)
         {
             this.Frame.Navigate(typeof(PokemonDetallePage), pokemon);
+        }
+
+        private void ScrollViewer_ViewChanged(object sender, Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs e)
+        {
         }
     }
 }

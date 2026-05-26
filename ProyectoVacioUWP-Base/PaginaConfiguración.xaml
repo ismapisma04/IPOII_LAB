@@ -96,7 +96,7 @@
                             LineHeight="30"/>
 
                         <ComboBox x:Name="Gestion_Notificaciones" x:Uid="Gestion_Notificaciones" Width="170" 
-                                  Loaded="Gestion_Notificaciones_Loaded" SelectionChanged="Gestion_Notificaciones_SelectionChanged">
+                                  Loaded="Gestion_Notificaciones_Loaded" SelectionChanged="Gestion_Notificaciones_SelectionChanged" PlaceholderText="Activar Notificaciones">
                             <ComboBoxItem x:Uid="OpcionNotificacionesOn" Content="Activadas" Tag="On"/>
                             <ComboBoxItem x:Uid="OpcionNotificacionesOff" Content="Desactivadas" Tag="Off"/>
                         </ComboBox>

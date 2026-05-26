@@ -34,6 +34,7 @@ namespace ProyectoVacioUWP_Base
                     pokemon.verPocionEnergia(false);
                     pokemon.verFilaVida(false);
                     pokemon.verFilaEnergia(false);
+                    pokemon.activarAniIdle(true);
                 }
 
                 // Volvemos a llamar a este mismo método (recursividad) para revisar dentro de contenedores (como el Grid o los Viewbox)
